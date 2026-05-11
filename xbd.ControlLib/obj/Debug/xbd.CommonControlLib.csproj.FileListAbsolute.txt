@@ -1,0 +1,9 @@
+C:\Users\94693\Desktop\xbd.PressurizationStationPro\xbd.ControlLib\bin\Debug\xbd.ControlLib.dll
+C:\Users\94693\Desktop\xbd.PressurizationStationPro\xbd.ControlLib\bin\Debug\xbd.ControlLib.pdb
+C:\Users\94693\Desktop\xbd.PressurizationStationPro\xbd.ControlLib\obj\Debug\xbd.CommonControlLib.csproj.AssemblyReference.cache
+C:\Users\94693\Desktop\xbd.PressurizationStationPro\xbd.ControlLib\obj\Debug\thinger.CommonControlLib.xbdFlowControl.resources
+C:\Users\94693\Desktop\xbd.PressurizationStationPro\xbd.ControlLib\obj\Debug\xbd.ControlLib.xbdAnalogMeter.resources
+C:\Users\94693\Desktop\xbd.PressurizationStationPro\xbd.ControlLib\obj\Debug\xbd.CommonControlLib.csproj.GenerateResource.cache
+C:\Users\94693\Desktop\xbd.PressurizationStationPro\xbd.ControlLib\obj\Debug\xbd.CommonControlLib.csproj.CoreCompileInputs.cache
+C:\Users\94693\Desktop\xbd.PressurizationStationPro\xbd.ControlLib\obj\Debug\xbd.ControlLib.dll
+C:\Users\94693\Desktop\xbd.PressurizationStationPro\xbd.ControlLib\obj\Debug\xbd.ControlLib.pdb
