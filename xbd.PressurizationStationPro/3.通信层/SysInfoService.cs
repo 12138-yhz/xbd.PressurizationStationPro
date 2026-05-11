@@ -7,7 +7,7 @@ using xbd.s7netplus;
 
 namespace xbd.PressurizationStationPro
 {
-    internal class SysInfoService
+    public class SysInfoService
     {
 
         /// <summary>

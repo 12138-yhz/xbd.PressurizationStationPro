@@ -189,6 +189,7 @@
             this.btn_SysCancel.TabIndex = 3;
             this.btn_SysCancel.Text = "取消设置";
             this.btn_SysCancel.UseVisualStyleBackColor = false;
+            this.btn_SysCancel.Click += new System.EventHandler(this.btn_SysCancel_Click);
             // 
             // btn_PLCCancel
             // 
@@ -204,6 +205,7 @@
             this.btn_PLCCancel.TabIndex = 3;
             this.btn_PLCCancel.Text = "取消设置";
             this.btn_PLCCancel.UseVisualStyleBackColor = false;
+            this.btn_PLCCancel.Click += new System.EventHandler(this.btn_PLCCancel_Click);
             // 
             // btn_SysSet
             // 
@@ -219,6 +221,7 @@
             this.btn_SysSet.TabIndex = 3;
             this.btn_SysSet.Text = "设置完成";
             this.btn_SysSet.UseVisualStyleBackColor = false;
+            this.btn_SysSet.Click += new System.EventHandler(this.btn_SysSet_Click);
             // 
             // btn_PLCSet
             // 
@@ -234,6 +237,7 @@
             this.btn_PLCSet.TabIndex = 3;
             this.btn_PLCSet.Text = "设置完成";
             this.btn_PLCSet.UseVisualStyleBackColor = false;
+            this.btn_PLCSet.Click += new System.EventHandler(this.btn_PLCSet_Click);
             // 
             // panel1
             // 
@@ -243,7 +247,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(612, 46);
+            this.panel1.Size = new System.Drawing.Size(612, 39);
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Panel_MouseMove);
@@ -258,6 +262,7 @@
             this.lbl_Exit.TabIndex = 2;
             this.lbl_Exit.Text = "X";
             this.lbl_Exit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_Exit.Click += new System.EventHandler(this.lbl_Exit_Click);
             // 
             // pictureBox1
             // 
@@ -272,7 +277,7 @@
             // 
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label1.Location = new System.Drawing.Point(0, 45);
+            this.label1.Location = new System.Drawing.Point(0, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(612, 1);
             this.label1.TabIndex = 0;
@@ -421,6 +426,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmParmSet";
             this.Padding = new System.Windows.Forms.Padding(1);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmParmSet";
             this.mainPanel.ResumeLayout(false);
             this.mainPanel.PerformLayout();

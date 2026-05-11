@@ -22,3 +22,9 @@ E:\YHZ\FormProject\xbd.PressurizationStationPro\xbd.DataConvertLib\obj\Debug\xbd
 E:\YHZ\FormProject\xbd.PressurizationStationPro\xbd.DataConvertLib\obj\Debug\xbd.DataConvertLib.csproj.CoreCompileInputs.cache
 E:\YHZ\FormProject\xbd.PressurizationStationPro\xbd.DataConvertLib\obj\Debug\xbd.DataConvertLib.dll
 E:\YHZ\FormProject\xbd.PressurizationStationPro\xbd.DataConvertLib\obj\Debug\xbd.DataConvertLib.pdb
+D:\FormProject\xbd.PressurizationStationPro\xbd.DataConvertLib\bin\Debug\xbd.DataConvertLib.dll
+D:\FormProject\xbd.PressurizationStationPro\xbd.DataConvertLib\bin\Debug\xbd.DataConvertLib.pdb
+D:\FormProject\xbd.PressurizationStationPro\xbd.DataConvertLib\obj\Debug\xbd.DataConvertLib.csproj.AssemblyReference.cache
+D:\FormProject\xbd.PressurizationStationPro\xbd.DataConvertLib\obj\Debug\xbd.DataConvertLib.csproj.CoreCompileInputs.cache
+D:\FormProject\xbd.PressurizationStationPro\xbd.DataConvertLib\obj\Debug\xbd.DataConvertLib.dll
+D:\FormProject\xbd.PressurizationStationPro\xbd.DataConvertLib\obj\Debug\xbd.DataConvertLib.pdb

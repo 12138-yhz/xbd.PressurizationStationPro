@@ -40,6 +40,13 @@
             this.label39 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
@@ -126,13 +133,6 @@
             this.btn_Record = new System.Windows.Forms.Button();
             this.btn_SetParm = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
-            this.label46 = new System.Windows.Forms.Label();
-            this.label47 = new System.Windows.Forms.Label();
-            this.label48 = new System.Windows.Forms.Label();
-            this.label49 = new System.Windows.Forms.Label();
-            this.label50 = new System.Windows.Forms.Label();
-            this.label51 = new System.Windows.Forms.Label();
             this.main_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -213,6 +213,7 @@
             this.main_Panel.Name = "main_Panel";
             this.main_Panel.Size = new System.Drawing.Size(1280, 643);
             this.main_Panel.TabIndex = 1;
+    
             // 
             // xbdMotor2
             // 
@@ -254,7 +255,6 @@
             this.xbdFlowControl9.PipeTurnRight = xbd.ControlLib.PipeTurnDirection.Left;
             this.xbdFlowControl9.Size = new System.Drawing.Size(13, 129);
             this.xbdFlowControl9.TabIndex = 12;
-    
             // 
             // xbdFlowControl8
             // 
@@ -276,7 +276,6 @@
             this.xbdFlowControl8.PipeTurnRight = xbd.ControlLib.PipeTurnDirection.None;
             this.xbdFlowControl8.Size = new System.Drawing.Size(13, 74);
             this.xbdFlowControl8.TabIndex = 12;
-     
             // 
             // xbdFlowControl6
             // 
@@ -298,7 +297,6 @@
             this.xbdFlowControl6.PipeTurnRight = xbd.ControlLib.PipeTurnDirection.None;
             this.xbdFlowControl6.Size = new System.Drawing.Size(13, 74);
             this.xbdFlowControl6.TabIndex = 12;
-     
             // 
             // pictureBox2
             // 
@@ -349,6 +347,83 @@
             this.label37.Size = new System.Drawing.Size(68, 20);
             this.label37.TabIndex = 1;
             this.label37.Text = "2#进水管";
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Font = new System.Drawing.Font("DigifaceWide", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label49.ForeColor = System.Drawing.Color.White;
+            this.label49.Location = new System.Drawing.Point(312, 391);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(27, 23);
+            this.label49.TabIndex = 1;
+            this.label49.Text = "℃";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label51.ForeColor = System.Drawing.Color.White;
+            this.label51.Location = new System.Drawing.Point(930, 359);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(31, 20);
+            this.label51.TabIndex = 1;
+            this.label51.Text = "bar";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Font = new System.Drawing.Font("DigifaceWide", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label47.ForeColor = System.Drawing.Color.White;
+            this.label47.Location = new System.Drawing.Point(312, 250);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(27, 23);
+            this.label47.TabIndex = 1;
+            this.label47.Text = "℃";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("DigifaceWide", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label45.ForeColor = System.Drawing.Color.White;
+            this.label45.Location = new System.Drawing.Point(312, 99);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(27, 23);
+            this.label45.TabIndex = 1;
+            this.label45.Text = "℃";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Font = new System.Drawing.Font("DigifaceWide", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label48.ForeColor = System.Drawing.Color.White;
+            this.label48.Location = new System.Drawing.Point(249, 391);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(70, 23);
+            this.label48.TabIndex = 1;
+            this.label48.Text = "24.48";
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Font = new System.Drawing.Font("DigifaceWide", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label50.ForeColor = System.Drawing.Color.White;
+            this.label50.Location = new System.Drawing.Point(861, 359);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(70, 23);
+            this.label50.TabIndex = 1;
+            this.label50.Text = "24.48";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("DigifaceWide", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label46.ForeColor = System.Drawing.Color.White;
+            this.label46.Location = new System.Drawing.Point(249, 250);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(70, 23);
+            this.label46.TabIndex = 1;
+            this.label46.Text = "24.48";
             // 
             // label44
             // 
@@ -450,7 +525,6 @@
             this.xbdWave2.TabIndex = 13;
             this.xbdWave2.Value = 0;
             this.xbdWave2.ValueColor = System.Drawing.Color.Lime;
-    
             // 
             // pictureBox3
             // 
@@ -491,7 +565,7 @@
             this.xbdWave1.TabIndex = 13;
             this.xbdWave1.Value = 0;
             this.xbdWave1.ValueColor = System.Drawing.Color.Lime;
-        
+  
             // 
             // xbdFlowControl5
             // 
@@ -513,7 +587,6 @@
             this.xbdFlowControl5.PipeTurnRight = xbd.ControlLib.PipeTurnDirection.None;
             this.xbdFlowControl5.Size = new System.Drawing.Size(13, 74);
             this.xbdFlowControl5.TabIndex = 12;
-    
             // 
             // xbdFlowControl4
             // 
@@ -535,7 +608,6 @@
             this.xbdFlowControl4.PipeTurnRight = xbd.ControlLib.PipeTurnDirection.None;
             this.xbdFlowControl4.Size = new System.Drawing.Size(13, 74);
             this.xbdFlowControl4.TabIndex = 12;
-       
             // 
             // xbdFlowControl3
             // 
@@ -597,6 +669,7 @@
             this.button3.TabIndex = 3;
             this.button3.Text = "停止";
             this.button3.UseVisualStyleBackColor = true;
+    
             // 
             // button2
             // 
@@ -711,7 +784,6 @@
             this.xbdValve2.State = true;
             this.xbdValve2.TabIndex = 10;
             this.xbdValve2.ValveName = null;
-   
             // 
             // xbdValve1
             // 
@@ -775,7 +847,6 @@
             this.xbdPump2.Size = new System.Drawing.Size(84, 82);
             this.xbdPump2.TabIndex = 7;
             this.xbdPump2.Text = "xbdPump1";
-     
             // 
             // xbdPump1
             // 
@@ -797,7 +868,6 @@
             this.xbdPump1.Size = new System.Drawing.Size(84, 82);
             this.xbdPump1.TabIndex = 7;
             this.xbdPump1.Text = "xbdPump1";
-    
             // 
             // xbdFlowControl11
             // 
@@ -819,7 +889,6 @@
             this.xbdFlowControl11.PipeTurnRight = xbd.ControlLib.PipeTurnDirection.None;
             this.xbdFlowControl11.Size = new System.Drawing.Size(448, 13);
             this.xbdFlowControl11.TabIndex = 6;
-       
             // 
             // xbdFlowControl10
             // 
@@ -841,7 +910,6 @@
             this.xbdFlowControl10.PipeTurnRight = xbd.ControlLib.PipeTurnDirection.None;
             this.xbdFlowControl10.Size = new System.Drawing.Size(303, 13);
             this.xbdFlowControl10.TabIndex = 6;
-  
             // 
             // xbdFlowControl7
             // 
@@ -863,7 +931,6 @@
             this.xbdFlowControl7.PipeTurnRight = xbd.ControlLib.PipeTurnDirection.Down;
             this.xbdFlowControl7.Size = new System.Drawing.Size(382, 13);
             this.xbdFlowControl7.TabIndex = 6;
-
             // 
             // xbdFlowControl2
             // 
@@ -1464,6 +1531,7 @@
             this.top_Panel.Name = "top_Panel";
             this.top_Panel.Size = new System.Drawing.Size(1280, 77);
             this.top_Panel.TabIndex = 0;
+
             // 
             // lbl_Time
             // 
@@ -1534,6 +1602,7 @@
             this.btn_SetParm.TabIndex = 1;
             this.btn_SetParm.Text = "参数设置";
             this.btn_SetParm.UseVisualStyleBackColor = true;
+            this.btn_SetParm.Click += new System.EventHandler(this.btn_SetParm_Click);
             // 
             // label1
             // 
@@ -1546,84 +1615,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "智慧加压站SCADA监控系统";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-  
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Font = new System.Drawing.Font("DigifaceWide", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label45.ForeColor = System.Drawing.Color.White;
-            this.label45.Location = new System.Drawing.Point(312, 99);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(27, 23);
-            this.label45.TabIndex = 1;
-            this.label45.Text = "℃";
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Font = new System.Drawing.Font("DigifaceWide", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label46.ForeColor = System.Drawing.Color.White;
-            this.label46.Location = new System.Drawing.Point(249, 250);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(70, 23);
-            this.label46.TabIndex = 1;
-            this.label46.Text = "24.48";
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Font = new System.Drawing.Font("DigifaceWide", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label47.ForeColor = System.Drawing.Color.White;
-            this.label47.Location = new System.Drawing.Point(312, 250);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(27, 23);
-            this.label47.TabIndex = 1;
-            this.label47.Text = "℃";
-            // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Font = new System.Drawing.Font("DigifaceWide", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label48.ForeColor = System.Drawing.Color.White;
-            this.label48.Location = new System.Drawing.Point(249, 391);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(70, 23);
-            this.label48.TabIndex = 1;
-            this.label48.Text = "24.48";
-            // 
-            // label49
-            // 
-            this.label49.AutoSize = true;
-            this.label49.Font = new System.Drawing.Font("DigifaceWide", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label49.ForeColor = System.Drawing.Color.White;
-            this.label49.Location = new System.Drawing.Point(312, 391);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(27, 23);
-            this.label49.TabIndex = 1;
-            this.label49.Text = "℃";
-            // 
-            // label50
-            // 
-            this.label50.AutoSize = true;
-            this.label50.Font = new System.Drawing.Font("DigifaceWide", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label50.ForeColor = System.Drawing.Color.White;
-            this.label50.Location = new System.Drawing.Point(861, 359);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(70, 23);
-            this.label50.TabIndex = 1;
-            this.label50.Text = "24.48";
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label51.ForeColor = System.Drawing.Color.White;
-            this.label51.Location = new System.Drawing.Point(930, 359);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(31, 20);
-            this.label51.TabIndex = 1;
-            this.label51.Text = "bar";
             // 
             // FrmMain
             // 

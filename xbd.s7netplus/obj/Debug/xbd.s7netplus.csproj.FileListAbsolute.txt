@@ -16,3 +16,9 @@ E:\YHZ\FormProject\xbd.PressurizationStationPro\xbd.s7netplus\obj\Debug\xbd.s7ne
 E:\YHZ\FormProject\xbd.PressurizationStationPro\xbd.s7netplus\obj\Debug\xbd.s7netplus.csproj.CoreCompileInputs.cache
 E:\YHZ\FormProject\xbd.PressurizationStationPro\xbd.s7netplus\obj\Debug\xbd.s7netplus.dll
 E:\YHZ\FormProject\xbd.PressurizationStationPro\xbd.s7netplus\obj\Debug\xbd.s7netplus.pdb
+D:\FormProject\xbd.PressurizationStationPro\xbd.s7netplus\bin\Debug\xbd.s7netplus.dll
+D:\FormProject\xbd.PressurizationStationPro\xbd.s7netplus\bin\Debug\xbd.s7netplus.pdb
+D:\FormProject\xbd.PressurizationStationPro\xbd.s7netplus\obj\Debug\xbd.s7netplus.csproj.AssemblyReference.cache
+D:\FormProject\xbd.PressurizationStationPro\xbd.s7netplus\obj\Debug\xbd.s7netplus.csproj.CoreCompileInputs.cache
+D:\FormProject\xbd.PressurizationStationPro\xbd.s7netplus\obj\Debug\xbd.s7netplus.dll
+D:\FormProject\xbd.PressurizationStationPro\xbd.s7netplus\obj\Debug\xbd.s7netplus.pdb

@@ -8,6 +8,7 @@ namespace xbd.PressurizationStationPro
 {
     internal static class Program
     {
+
         /// <summary>
         /// 应用程序的主入口点。
         /// </summary>
@@ -17,6 +18,10 @@ namespace xbd.PressurizationStationPro
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FrmMain());
+
+
         }
+
+          
     }
 }

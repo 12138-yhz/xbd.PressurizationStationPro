@@ -35,8 +35,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_Message = new System.Windows.Forms.Label();
             this.mainPanel = new System.Windows.Forms.Panel();
-            this.btn_Ok = new System.Windows.Forms.Button();
             this.btn_Cancel = new System.Windows.Forms.Button();
+            this.btn_Ok = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.mainPanel.SuspendLayout();
@@ -124,23 +124,6 @@
             this.mainPanel.Size = new System.Drawing.Size(299, 251);
             this.mainPanel.TabIndex = 1;
             // 
-            // btn_Ok
-            // 
-            this.btn_Ok.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Ok.BackgroundImage = global::xbd.PressurizationStationPro.Properties.Resources.Green_png;
-            this.btn_Ok.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_Ok.FlatAppearance.BorderSize = 0;
-            this.btn_Ok.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Ok.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_Ok.Location = new System.Drawing.Point(43, 195);
-            this.btn_Ok.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_Ok.Name = "btn_Ok";
-            this.btn_Ok.Size = new System.Drawing.Size(90, 35);
-            this.btn_Ok.TabIndex = 3;
-            this.btn_Ok.Text = "确定";
-            this.btn_Ok.UseVisualStyleBackColor = false;
-            this.btn_Ok.Click += new System.EventHandler(this.btn_Ok_Click);
-            // 
             // btn_Cancel
             // 
             this.btn_Cancel.BackColor = System.Drawing.Color.Transparent;
@@ -157,6 +140,23 @@
             this.btn_Cancel.Text = "取消";
             this.btn_Cancel.UseVisualStyleBackColor = false;
             this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
+            // 
+            // btn_Ok
+            // 
+            this.btn_Ok.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Ok.BackgroundImage = global::xbd.PressurizationStationPro.Properties.Resources.Green_png;
+            this.btn_Ok.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Ok.FlatAppearance.BorderSize = 0;
+            this.btn_Ok.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Ok.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_Ok.Location = new System.Drawing.Point(43, 195);
+            this.btn_Ok.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_Ok.Name = "btn_Ok";
+            this.btn_Ok.Size = new System.Drawing.Size(90, 35);
+            this.btn_Ok.TabIndex = 3;
+            this.btn_Ok.Text = " ";
+            this.btn_Ok.UseVisualStyleBackColor = false;
+            this.btn_Ok.Click += new System.EventHandler(this.btn_Ok_Click);
             // 
             // FrmMsgWithAck
             // 

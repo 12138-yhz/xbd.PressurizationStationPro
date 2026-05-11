@@ -7,7 +7,7 @@ using xbd.s7netplus;
 
 namespace xbd.PressurizationStationPro
 {
-    internal class SysInfo
+    public class SysInfo
     {
         /// <summary>
         /// CPU类型
@@ -17,7 +17,7 @@ namespace xbd.PressurizationStationPro
         /// <summary>
         /// IP地址
         /// </summary>
-        public string IPAddress { get; set; }
+        public string IPAddress { get; set; } = "127.0.0.1";
 
         /// <summary>
         /// 机架号
