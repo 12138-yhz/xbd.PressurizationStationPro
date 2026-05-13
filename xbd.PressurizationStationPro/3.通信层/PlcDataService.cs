@@ -167,5 +167,27 @@ namespace xbd.PressurizationStationPro
             result &= s7Net.WriteVariable(controlAddress, false).IsSuccess;
             return result;
         }
+
+        public bool ValveInControl(bool value)
+        {
+            string startAddress = "DB1.DBX101.0"; 
+            string stopAddress = "DB1.DBX101.1";
+            string controlAddress = value ? startAddress : stopAddress;
+            bool result = s7Net.WriteVariable(controlAddress, true).IsSuccess;
+            Thread.Sleep(50);
+            result &= s7Net.WriteVariable(controlAddress, false).IsSuccess;
+            return result;
+        }
+
+        public bool ValveOutControl(bool value)
+        {
+            string startAddress = "DB1.DBX101.2"; 
+            string stopAddress = "DB1.DBX101.3";
+            string controlAddress = value ? startAddress : stopAddress;
+            bool result = s7Net.WriteVariable(controlAddress, true).IsSuccess;
+            Thread.Sleep(50);
+            result &= s7Net.WriteVariable(controlAddress, false).IsSuccess;
+            return result;
+        }
     }
 }

@@ -30,7 +30,6 @@ D:\FormProject\xbd.PressurizationStationPro\xbd.PressurizationStationPro\bin\Deb
 D:\FormProject\xbd.PressurizationStationPro\xbd.PressurizationStationPro\bin\Debug\xbd.DataConvertLib.pdb
 D:\FormProject\xbd.PressurizationStationPro\xbd.PressurizationStationPro\bin\Debug\xbd.s7netplus.pdb
 D:\FormProject\xbd.PressurizationStationPro\xbd.PressurizationStationPro\obj\Debug\xbd.PressurizationStationPro.csproj.AssemblyReference.cache
-D:\FormProject\xbd.PressurizationStationPro\xbd.PressurizationStationPro\obj\Debug\xbd.PressurizationStationPro.exe.config
 D:\FormProject\xbd.PressurizationStationPro\xbd.PressurizationStationPro\obj\Debug\xbd.PressurizationStationPro.FrmMain.resources
 D:\FormProject\xbd.PressurizationStationPro\xbd.PressurizationStationPro\obj\Debug\xbd.PressurizationStationPro.MeterShow.resources
 D:\FormProject\xbd.PressurizationStationPro\xbd.PressurizationStationPro\obj\Debug\xbd.PressurizationStationPro.FrmMsgWithAck.resources
@@ -43,3 +42,5 @@ D:\FormProject\xbd.PressurizationStationPro\xbd.PressurizationStationPro\obj\Deb
 D:\FormProject\xbd.PressurizationStationPro\xbd.PressurizationStationPro\obj\Debug\xbd.PressurizationStationPro.exe
 D:\FormProject\xbd.PressurizationStationPro\xbd.PressurizationStationPro\obj\Debug\xbd.PressurizationStationPro.pdb
 E:\YHZ\FormProject\xbd.PressurizationStationPro\xbd.PressurizationStationPro\obj\Debug\xbd.PressurizationStationPro.FrmValveControl.resources
+D:\FormProject\xbd.PressurizationStationPro\xbd.PressurizationStationPro\obj\Debug\xbd.PressurizationStationPro.FrmValveControl.resources
+D:\FormProject\xbd.PressurizationStationPro\xbd.PressurizationStationPro\obj\Debug\xbd.PressurizationStationPro.exe.config

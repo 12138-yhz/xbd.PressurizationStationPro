@@ -10,6 +10,16 @@ namespace xbd.PressurizationStationPro
     {
 
         /// <summary>
+        /// 锁屏时间滴答次数
+        /// </summary>
+        public static int TickCount { get;  set; }
+
+        /// <summary>
+        /// 当前登录的用户信息
+        /// </summary>
+        public static SysAdmin CurrentUser { get; set; }
+
+        /// <summary>
         /// 应用程序的主入口点。
         /// </summary>
         [STAThread]

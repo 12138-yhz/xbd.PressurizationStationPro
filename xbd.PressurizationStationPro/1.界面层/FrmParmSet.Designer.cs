@@ -111,6 +111,7 @@
             this.toggle_AutoStart.TabIndex = 7;
             this.toggle_AutoStart.Texts = null;
             this.toggle_AutoStart.TrueColor = System.Drawing.Color.LimeGreen;
+       
             // 
             // label8
             // 

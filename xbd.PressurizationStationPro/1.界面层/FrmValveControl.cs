@@ -12,18 +12,55 @@ namespace xbd.PressurizationStationPro
 {
     public partial class FrmValveControl : Form
     {
-        public FrmValveControl(string message,string title)
+
+        private string valveName;
+        private bool state;
+        private PlcDataService plcDataService;
+
+        public FrmValveControl(string valveName,bool state,PlcDataService plcDataService)
         {
             InitializeComponent();
+
+            this.valveName = valveName;
+            this.state = state;
+            this.plcDataService = plcDataService;
+
+
             this.TopMost = true;
-            this.lbl_Title.Text = title;
-            this.lbl_Message.Text = message;
+            this.lbl_Message.Text = "是否确定要"+(this.state ? "关闭" : "打开") +"?";
         }
 
  
         private void btn_Ok_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
+            if(plcDataService.IsConnected)
+            {
+                bool result = true;
+                switch (valveName)
+                {
+                    case "进水阀":
+                        result = plcDataService.ValveInControl(!state);
+                        break;
+                    case "出水阀":
+                        result = plcDataService.ValveOutControl(!state);
+                    break;
+                    default:
+                        new FrmMsgNoAck("未知阀门名称！", "阀门控制").ShowDialog();
+                        break;
+                }
+                if (result)
+                {
+                    this.DialogResult = DialogResult.OK;
+                }
+                else 
+                {
+                    new FrmMsgNoAck("阀门控制失败，请检查！", "阀门控制").ShowDialog();
+                }
+            }
+            else
+            {
+                new FrmMsgNoAck("请检查PLC连接是否正常！","阀门控制").ShowDialog();
+            }
         }
 
         private void lbl_Exit_Click(object sender, EventArgs e)

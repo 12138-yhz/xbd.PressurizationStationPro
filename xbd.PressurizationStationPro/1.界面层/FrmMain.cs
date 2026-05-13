@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using xbd.ControlLib;
 using xbd.s7netplus;
+using Timer = System.Windows.Forms.Timer;
 
 namespace xbd.PressurizationStationPro
 {
@@ -28,23 +31,84 @@ namespace xbd.PressurizationStationPro
         /// 系统配置对象
         /// </summary>
         private SysInfo sysInfo = new SysInfo();
-
+        /// <summary>
+        ///  plc数据服务对象，负责PLC连接、数据读取和控制等功能
+        /// </summary>
         private PlcDataService plcDataService = new PlcDataService();
 
+        /// <summary>
+        /// data读取线程取消标志，当窗体关闭时取消线程，避免线程访问已关闭的窗体导致异常
+        /// </summary>
         private CancellationTokenSource clts = new CancellationTokenSource();
+
+        /// <summary>
+        /// 定时器，用于更新时间显示和PLC连接状态指示，避免频繁更新UI导致界面卡顿
+        /// </summary>
+        private Timer updateTimer= new Timer();
+
+        private bool isFirstScan = true;
+
+        private MessageFilter messageFilter ;
+
+        private DateTime LoginTime = DateTime.Now;
+
+        private CameraHelper cameraHelper;
 
         public FrmMain()
         {
             InitializeComponent();
+
+            this.updateTimer.Interval = 500;
+
+            this.updateTimer.Tick += UpdateTimer_Tick;
+
+            this.updateTimer.Start();
 
             this.Load += FrmMain_Load;
             this.FormClosing += FrmMain_FormClosing;
 
         }
 
+        private void UpdateTimer_Tick(object sender, EventArgs e)
+        {
+            this.lbl_Time.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")+" "+new CultureInfo("zh-CN").DateTimeFormat.GetDayName(DateTime.Now.DayOfWeek);
+
+            this.led_PLCState.State = plcDataService.IsConnected;
+
+            //大于0说明已经加载了系统配置，才进行屏幕时间的更新，避免在系统配置加载失败时界面显示异常，鼠标键盘无操作
+            if (sysInfo.ScreenTime > 0)
+            {
+                Program.TickCount++;
+
+                if (sysInfo.ScreenTime*1000/this.updateTimer.Interval == Program.TickCount)
+                {
+                    //锁屏
+                    LockWorkStation();
+                }
+
+            }
+
+            //自动注销
+            if (sysInfo.LogoffTime > 0) 
+            { 
+                if(Program.CurrentUser != null)
+                {
+                    TimeSpan timeSpan = DateTime.Now - LoginTime;
+
+                    if (timeSpan.TotalSeconds >= sysInfo.LogoffTime)
+                    {
+                        //注销
+                        Program.CurrentUser = null;
+                        this.btn_UserLogin.Text = "用户登录";
+                    }
+                }
+            }
+        }
+
         private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             clts.Cancel();
+            cameraHelper?.StopCamera();
         }
 
         private void FrmMain_Load(object sender, EventArgs e)
@@ -57,7 +121,19 @@ namespace xbd.PressurizationStationPro
                 return;
             }
 
+            //锁屏处理
+            if(sysInfo.ScreenTime > 0)
+            {
+                messageFilter = new MessageFilter();
+
+                Application.AddMessageFilter(messageFilter);
+            }
+
             Task.Run(new Action(() => { PLCCommlication(); }));
+
+            //采集摄像头
+             cameraHelper = new CameraHelper(sysInfo.CameraIndex,this.vsp_Panel);
+            cameraHelper.StartCamera();
         }
 
         private void PLCCommlication()
@@ -133,6 +209,14 @@ namespace xbd.PressurizationStationPro
             }
             else
             {
+                //第一次扫描时，更新泵的状态，避免界面显示与实际状态不一致
+                if (isFirstScan)
+                {
+                    this.toggle_Pump1.Checked = plcData.InPump1State;
+                    this.toggle_Pump2.Checked = plcData.InPump2State;
+                    isFirstScan = false;
+                }
+
                 //左侧仪表
                 this.lbl__PressureIn.Text = plcData.PressureIn.ToString("f2") + " bar";
                 this.lbl__PressureOut.Text = plcData.PressureOut.ToString("f2") + " bar";
@@ -149,7 +233,7 @@ namespace xbd.PressurizationStationPro
 
                 //系统状态
                 this.led_SysRunState.State = plcData.SysRunState;
-                this.led_SysAlarmState.State = plcData.SysAlarmState;
+                this.led_SysAlarmState.State = ! plcData.SysAlarmState;
 
                 //系统参数
                 this.lbl_PressureTank1.Text = plcData.PressureTank1.ToString("f2");
@@ -224,5 +308,38 @@ namespace xbd.PressurizationStationPro
         {
             plcDataService.SysReset();
         }
+
+        private void valveCommonClick(object sender, EventArgs e)
+        {
+            if(sender is xbdValve valve)
+            {
+                FrmValveControl frmValveControl = new FrmValveControl(valve.ValveName, valve.State, plcDataService);
+                frmValveControl.ShowDialog();
+            }
+        }
+
+        #region 系统锁屏
+
+        [DllImport("user32")]
+        public static extern bool LockWorkStation();
+
+        #endregion
+
+   
     }
+
+    #region 消息筛选器 
+    public class MessageFilter : IMessageFilter
+    {
+        public bool PreFilterMessage(ref Message m)
+        {
+            //如果检测到有鼠标或则键盘的消息，则使计数为0.....
+            if (m.Msg == 0x0200 || m.Msg == 0x0201 || m.Msg == 0x0204 || m.Msg == 0x0207)
+            {
+                Program.TickCount = 0;
+            }
+            return false;
+        }
+    }
+    #endregion
 }
