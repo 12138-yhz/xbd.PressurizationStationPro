@@ -52,6 +52,12 @@
     <Compile Include="1.界面层\FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="1.界面层\FrmValveControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="1.界面层\FrmValveControl.Designer.cs">
+      <DependentUpon>FrmValveControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="5.工具库\IniConfigHelper.cs" />
     <Compile Include="1.界面层\MeterShow.cs">
       <SubType>UserControl</SubType>
@@ -86,6 +92,9 @@
     <Compile Include="3.通信层\SysInfoService.cs" />
     <EmbeddedResource Include="1.界面层\FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="1.界面层\FrmValveControl.resx">
+      <DependentUpon>FrmValveControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="1.界面层\MeterShow.resx">
       <DependentUpon>MeterShow.cs</DependentUpon>

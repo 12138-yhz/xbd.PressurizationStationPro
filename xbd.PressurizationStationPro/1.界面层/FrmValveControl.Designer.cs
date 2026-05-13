@@ -1,6 +1,6 @@
 ﻿namespace xbd.PressurizationStationPro
 {
-    partial class FrmMsgWithAck
+    partial class FrmValveControl
     {
         /// <summary>
         /// Required designer variable.
@@ -65,7 +65,7 @@
             this.lbl_Title.Name = "lbl_Title";
             this.lbl_Title.Size = new System.Drawing.Size(88, 26);
             this.lbl_Title.TabIndex = 3;
-            this.lbl_Title.Text = "登录提示";
+            this.lbl_Title.Text = "阀门控制";
             // 
             // lbl_Exit
             // 
@@ -107,7 +107,7 @@
             this.lbl_Message.Name = "lbl_Message";
             this.lbl_Message.Size = new System.Drawing.Size(275, 101);
             this.lbl_Message.TabIndex = 2;
-            this.lbl_Message.Text = "用户你们多少";
+            this.lbl_Message.Text = "是否确认打开进水阀门？";
             this.lbl_Message.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // mainPanel
@@ -158,7 +158,7 @@
             this.btn_Ok.UseVisualStyleBackColor = false;
             this.btn_Ok.Click += new System.EventHandler(this.btn_Ok_Click);
             // 
-            // FrmMsgWithAck
+            // FrmValveControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -166,7 +166,7 @@
             this.ClientSize = new System.Drawing.Size(299, 251);
             this.Controls.Add(this.mainPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmMsgWithAck";
+            this.Name = "FrmValveControl";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmMsgNoAck";
             this.panel1.ResumeLayout(false);

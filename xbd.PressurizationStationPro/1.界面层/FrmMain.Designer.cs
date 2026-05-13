@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.main_Panel = new System.Windows.Forms.Panel();
-            this.xbdMotor2 = new xbd.ControlLib.xbdMotor();
-            this.xbdMotor1 = new xbd.ControlLib.xbdMotor();
+            this.motor_Pump1 = new xbd.ControlLib.xbdMotor();
+            this.motor_Pump2 = new xbd.ControlLib.xbdMotor();
             this.xbdFlowControl9 = new xbd.ControlLib.xbdFlowControl();
             this.xbdFlowControl8 = new xbd.ControlLib.xbdFlowControl();
             this.xbdFlowControl6 = new xbd.ControlLib.xbdFlowControl();
@@ -44,10 +44,10 @@
             this.label51 = new System.Windows.Forms.Label();
             this.label47 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
-            this.label48 = new System.Windows.Forms.Label();
-            this.label50 = new System.Windows.Forms.Label();
-            this.label46 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
+            this.lbl_TempOut = new System.Windows.Forms.Label();
+            this.lbl_PreTankOut = new System.Windows.Forms.Label();
+            this.lbl_TempIn2 = new System.Windows.Forms.Label();
+            this.lbl_TempIn1 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
@@ -55,17 +55,17 @@
             this.label42 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
-            this.xbdWave2 = new xbd.ControlLib.xbdWave();
+            this.wave_Tank2 = new xbd.ControlLib.xbdWave();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.xbdWave1 = new xbd.ControlLib.xbdWave();
+            this.wave_Tank1 = new xbd.ControlLib.xbdWave();
             this.xbdFlowControl5 = new xbd.ControlLib.xbdFlowControl();
             this.xbdFlowControl4 = new xbd.ControlLib.xbdFlowControl();
             this.xbdFlowControl3 = new xbd.ControlLib.xbdFlowControl();
             this.label27 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_Pump2 = new System.Windows.Forms.Button();
+            this.btn_Pump1 = new System.Windows.Forms.Button();
+            this.btn_SysRest = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label30 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
@@ -74,12 +74,12 @@
             this.label26 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
-            this.xbdValve2 = new xbd.ControlLib.xbdValve();
-            this.xbdValve1 = new xbd.ControlLib.xbdValve();
-            this.xbdToggle2 = new xbd.ControlLib.xbdToggle();
-            this.xbdToggle1 = new xbd.ControlLib.xbdToggle();
-            this.xbdPump2 = new xbd.ControlLib.xbdPump();
-            this.xbdPump1 = new xbd.ControlLib.xbdPump();
+            this.valve_Out = new xbd.ControlLib.xbdValve();
+            this.valve_In = new xbd.ControlLib.xbdValve();
+            this.toggle_Pump2 = new xbd.ControlLib.xbdToggle();
+            this.toggle_Pump1 = new xbd.ControlLib.xbdToggle();
+            this.pump_In2 = new xbd.ControlLib.xbdPump();
+            this.pump_In1 = new xbd.ControlLib.xbdPump();
             this.xbdFlowControl11 = new xbd.ControlLib.xbdFlowControl();
             this.xbdFlowControl10 = new xbd.ControlLib.xbdFlowControl();
             this.xbdFlowControl7 = new xbd.ControlLib.xbdFlowControl();
@@ -91,11 +91,11 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lbl_PressureTankOut = new System.Windows.Forms.Label();
+            this.lbl_LevelTank2 = new System.Windows.Forms.Label();
+            this.lbl_PressureTank2 = new System.Windows.Forms.Label();
+            this.lbl_LevelTank1 = new System.Windows.Forms.Label();
+            this.lbl_PressureTank1 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -104,28 +104,22 @@
             this.label12 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.xbdState3 = new xbd.ControlLib.xbdState();
-            this.xbdState2 = new xbd.ControlLib.xbdState();
-            this.xbdState1 = new xbd.ControlLib.xbdState();
+            this.led_SysAlarmState = new xbd.ControlLib.xbdState();
+            this.led_SysRunState = new xbd.ControlLib.xbdState();
+            this.led_PLCState = new xbd.ControlLib.xbdState();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.meterShow6 = new xbd.PressurizationStationPro.MeterShow();
-            this.meterShow5 = new xbd.PressurizationStationPro.MeterShow();
-            this.meterShow4 = new xbd.PressurizationStationPro.MeterShow();
-            this.meterShow3 = new xbd.PressurizationStationPro.MeterShow();
-            this.meterShow2 = new xbd.PressurizationStationPro.MeterShow();
-            this.meterShow1 = new xbd.PressurizationStationPro.MeterShow();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbl__PressureOut = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.xbdAnalogMeter2 = new xbd.ControlLib.xbdAnalogMeter();
+            this.meter_PressureOut = new xbd.ControlLib.xbdAnalogMeter();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lbl_ParmValue = new System.Windows.Forms.Label();
+            this.lbl__PressureIn = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.xbdAnalogMeter1 = new xbd.ControlLib.xbdAnalogMeter();
+            this.meter_PressureIn = new xbd.ControlLib.xbdAnalogMeter();
             this.top_Panel = new System.Windows.Forms.Panel();
             this.lbl_Time = new System.Windows.Forms.Label();
             this.btn_Exit = new System.Windows.Forms.Button();
@@ -133,6 +127,12 @@
             this.btn_Record = new System.Windows.Forms.Button();
             this.btn_SetParm = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.ms_TankPressureOut = new xbd.PressurizationStationPro.MeterShow();
+            this.ms_TankPressureIn2 = new xbd.PressurizationStationPro.MeterShow();
+            this.ms_TankPressureIn1 = new xbd.PressurizationStationPro.MeterShow();
+            this.ms_TempIn2 = new xbd.PressurizationStationPro.MeterShow();
+            this.ms_TempOut = new xbd.PressurizationStationPro.MeterShow();
+            this.ms_TempIn1 = new xbd.PressurizationStationPro.MeterShow();
             this.main_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -147,8 +147,8 @@
             // 
             // main_Panel
             // 
-            this.main_Panel.Controls.Add(this.xbdMotor2);
-            this.main_Panel.Controls.Add(this.xbdMotor1);
+            this.main_Panel.Controls.Add(this.motor_Pump1);
+            this.main_Panel.Controls.Add(this.motor_Pump2);
             this.main_Panel.Controls.Add(this.xbdFlowControl9);
             this.main_Panel.Controls.Add(this.xbdFlowControl8);
             this.main_Panel.Controls.Add(this.xbdFlowControl6);
@@ -161,10 +161,10 @@
             this.main_Panel.Controls.Add(this.label51);
             this.main_Panel.Controls.Add(this.label47);
             this.main_Panel.Controls.Add(this.label45);
-            this.main_Panel.Controls.Add(this.label48);
-            this.main_Panel.Controls.Add(this.label50);
-            this.main_Panel.Controls.Add(this.label46);
-            this.main_Panel.Controls.Add(this.label44);
+            this.main_Panel.Controls.Add(this.lbl_TempOut);
+            this.main_Panel.Controls.Add(this.lbl_PreTankOut);
+            this.main_Panel.Controls.Add(this.lbl_TempIn2);
+            this.main_Panel.Controls.Add(this.lbl_TempIn1);
             this.main_Panel.Controls.Add(this.label36);
             this.main_Panel.Controls.Add(this.label35);
             this.main_Panel.Controls.Add(this.label34);
@@ -172,17 +172,17 @@
             this.main_Panel.Controls.Add(this.label42);
             this.main_Panel.Controls.Add(this.label41);
             this.main_Panel.Controls.Add(this.label33);
-            this.main_Panel.Controls.Add(this.xbdWave2);
+            this.main_Panel.Controls.Add(this.wave_Tank2);
             this.main_Panel.Controls.Add(this.pictureBox3);
             this.main_Panel.Controls.Add(this.pictureBox1);
-            this.main_Panel.Controls.Add(this.xbdWave1);
+            this.main_Panel.Controls.Add(this.wave_Tank1);
             this.main_Panel.Controls.Add(this.xbdFlowControl5);
             this.main_Panel.Controls.Add(this.xbdFlowControl4);
             this.main_Panel.Controls.Add(this.xbdFlowControl3);
             this.main_Panel.Controls.Add(this.label27);
-            this.main_Panel.Controls.Add(this.button4);
-            this.main_Panel.Controls.Add(this.button3);
-            this.main_Panel.Controls.Add(this.button2);
+            this.main_Panel.Controls.Add(this.btn_Pump2);
+            this.main_Panel.Controls.Add(this.btn_Pump1);
+            this.main_Panel.Controls.Add(this.btn_SysRest);
             this.main_Panel.Controls.Add(this.button1);
             this.main_Panel.Controls.Add(this.label30);
             this.main_Panel.Controls.Add(this.label32);
@@ -191,12 +191,12 @@
             this.main_Panel.Controls.Add(this.label26);
             this.main_Panel.Controls.Add(this.label28);
             this.main_Panel.Controls.Add(this.label25);
-            this.main_Panel.Controls.Add(this.xbdValve2);
-            this.main_Panel.Controls.Add(this.xbdValve1);
-            this.main_Panel.Controls.Add(this.xbdToggle2);
-            this.main_Panel.Controls.Add(this.xbdToggle1);
-            this.main_Panel.Controls.Add(this.xbdPump2);
-            this.main_Panel.Controls.Add(this.xbdPump1);
+            this.main_Panel.Controls.Add(this.valve_Out);
+            this.main_Panel.Controls.Add(this.valve_In);
+            this.main_Panel.Controls.Add(this.toggle_Pump2);
+            this.main_Panel.Controls.Add(this.toggle_Pump1);
+            this.main_Panel.Controls.Add(this.pump_In2);
+            this.main_Panel.Controls.Add(this.pump_In1);
             this.main_Panel.Controls.Add(this.xbdFlowControl11);
             this.main_Panel.Controls.Add(this.xbdFlowControl10);
             this.main_Panel.Controls.Add(this.xbdFlowControl7);
@@ -213,27 +213,26 @@
             this.main_Panel.Name = "main_Panel";
             this.main_Panel.Size = new System.Drawing.Size(1280, 643);
             this.main_Panel.TabIndex = 1;
-    
             // 
-            // xbdMotor2
+            // motor_Pump1
             // 
-            this.xbdMotor2.Font = new System.Drawing.Font("微软雅黑", 10.5F);
-            this.xbdMotor2.Location = new System.Drawing.Point(498, 347);
-            this.xbdMotor2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.xbdMotor2.Name = "xbdMotor2";
-            this.xbdMotor2.PumpState = xbd.ControlLib.PumpState.停止;
-            this.xbdMotor2.Size = new System.Drawing.Size(77, 96);
-            this.xbdMotor2.TabIndex = 15;
+            this.motor_Pump1.Font = new System.Drawing.Font("微软雅黑", 10.5F);
+            this.motor_Pump1.Location = new System.Drawing.Point(498, 347);
+            this.motor_Pump1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.motor_Pump1.Name = "motor_Pump1";
+            this.motor_Pump1.PumpState = xbd.ControlLib.PumpState.停止;
+            this.motor_Pump1.Size = new System.Drawing.Size(77, 96);
+            this.motor_Pump1.TabIndex = 15;
             // 
-            // xbdMotor1
+            // motor_Pump2
             // 
-            this.xbdMotor1.Font = new System.Drawing.Font("微软雅黑", 10.5F);
-            this.xbdMotor1.Location = new System.Drawing.Point(666, 347);
-            this.xbdMotor1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.xbdMotor1.Name = "xbdMotor1";
-            this.xbdMotor1.PumpState = xbd.ControlLib.PumpState.停止;
-            this.xbdMotor1.Size = new System.Drawing.Size(77, 96);
-            this.xbdMotor1.TabIndex = 15;
+            this.motor_Pump2.Font = new System.Drawing.Font("微软雅黑", 10.5F);
+            this.motor_Pump2.Location = new System.Drawing.Point(666, 347);
+            this.motor_Pump2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.motor_Pump2.Name = "motor_Pump2";
+            this.motor_Pump2.PumpState = xbd.ControlLib.PumpState.停止;
+            this.motor_Pump2.Size = new System.Drawing.Size(77, 96);
+            this.motor_Pump2.TabIndex = 15;
             // 
             // xbdFlowControl9
             // 
@@ -392,49 +391,49 @@
             this.label45.TabIndex = 1;
             this.label45.Text = "℃";
             // 
-            // label48
+            // lbl_TempOut
             // 
-            this.label48.AutoSize = true;
-            this.label48.Font = new System.Drawing.Font("DigifaceWide", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label48.ForeColor = System.Drawing.Color.White;
-            this.label48.Location = new System.Drawing.Point(249, 391);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(70, 23);
-            this.label48.TabIndex = 1;
-            this.label48.Text = "24.48";
+            this.lbl_TempOut.AutoSize = true;
+            this.lbl_TempOut.Font = new System.Drawing.Font("DigifaceWide", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_TempOut.ForeColor = System.Drawing.Color.White;
+            this.lbl_TempOut.Location = new System.Drawing.Point(249, 391);
+            this.lbl_TempOut.Name = "lbl_TempOut";
+            this.lbl_TempOut.Size = new System.Drawing.Size(70, 23);
+            this.lbl_TempOut.TabIndex = 1;
+            this.lbl_TempOut.Text = "24.48";
             // 
-            // label50
+            // lbl_PreTankOut
             // 
-            this.label50.AutoSize = true;
-            this.label50.Font = new System.Drawing.Font("DigifaceWide", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label50.ForeColor = System.Drawing.Color.White;
-            this.label50.Location = new System.Drawing.Point(861, 359);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(70, 23);
-            this.label50.TabIndex = 1;
-            this.label50.Text = "24.48";
+            this.lbl_PreTankOut.AutoSize = true;
+            this.lbl_PreTankOut.Font = new System.Drawing.Font("DigifaceWide", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_PreTankOut.ForeColor = System.Drawing.Color.White;
+            this.lbl_PreTankOut.Location = new System.Drawing.Point(861, 359);
+            this.lbl_PreTankOut.Name = "lbl_PreTankOut";
+            this.lbl_PreTankOut.Size = new System.Drawing.Size(70, 23);
+            this.lbl_PreTankOut.TabIndex = 1;
+            this.lbl_PreTankOut.Text = "24.48";
             // 
-            // label46
+            // lbl_TempIn2
             // 
-            this.label46.AutoSize = true;
-            this.label46.Font = new System.Drawing.Font("DigifaceWide", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label46.ForeColor = System.Drawing.Color.White;
-            this.label46.Location = new System.Drawing.Point(249, 250);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(70, 23);
-            this.label46.TabIndex = 1;
-            this.label46.Text = "24.48";
+            this.lbl_TempIn2.AutoSize = true;
+            this.lbl_TempIn2.Font = new System.Drawing.Font("DigifaceWide", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_TempIn2.ForeColor = System.Drawing.Color.White;
+            this.lbl_TempIn2.Location = new System.Drawing.Point(249, 250);
+            this.lbl_TempIn2.Name = "lbl_TempIn2";
+            this.lbl_TempIn2.Size = new System.Drawing.Size(70, 23);
+            this.lbl_TempIn2.TabIndex = 1;
+            this.lbl_TempIn2.Text = "24.48";
             // 
-            // label44
+            // lbl_TempIn1
             // 
-            this.label44.AutoSize = true;
-            this.label44.Font = new System.Drawing.Font("DigifaceWide", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label44.ForeColor = System.Drawing.Color.White;
-            this.label44.Location = new System.Drawing.Point(249, 99);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(70, 23);
-            this.label44.TabIndex = 1;
-            this.label44.Text = "24.48";
+            this.lbl_TempIn1.AutoSize = true;
+            this.lbl_TempIn1.Font = new System.Drawing.Font("DigifaceWide", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_TempIn1.ForeColor = System.Drawing.Color.White;
+            this.lbl_TempIn1.Location = new System.Drawing.Point(249, 99);
+            this.lbl_TempIn1.Name = "lbl_TempIn1";
+            this.lbl_TempIn1.Size = new System.Drawing.Size(70, 23);
+            this.lbl_TempIn1.TabIndex = 1;
+            this.lbl_TempIn1.Text = "24.48";
             // 
             // label36
             // 
@@ -506,25 +505,25 @@
             this.label33.TabIndex = 1;
             this.label33.Text = "水箱液位";
             // 
-            // xbdWave2
+            // wave_Tank2
             // 
-            this.xbdWave2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(138)))), ((int)(((byte)(214)))));
-            this.xbdWave2.ConerRadius = 10;
-            this.xbdWave2.FillColor = System.Drawing.Color.Transparent;
-            this.xbdWave2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.xbdWave2.ForeColor = System.Drawing.Color.White;
-            this.xbdWave2.IsRadius = true;
-            this.xbdWave2.IsRectangle = true;
-            this.xbdWave2.IsShowRect = false;
-            this.xbdWave2.Location = new System.Drawing.Point(973, 113);
-            this.xbdWave2.MaxValue = 100;
-            this.xbdWave2.Name = "xbdWave2";
-            this.xbdWave2.RectColor = System.Drawing.Color.White;
-            this.xbdWave2.RectWidth = 4;
-            this.xbdWave2.Size = new System.Drawing.Size(68, 119);
-            this.xbdWave2.TabIndex = 13;
-            this.xbdWave2.Value = 0;
-            this.xbdWave2.ValueColor = System.Drawing.Color.Lime;
+            this.wave_Tank2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(138)))), ((int)(((byte)(214)))));
+            this.wave_Tank2.ConerRadius = 10;
+            this.wave_Tank2.FillColor = System.Drawing.Color.Transparent;
+            this.wave_Tank2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.wave_Tank2.ForeColor = System.Drawing.Color.White;
+            this.wave_Tank2.IsRadius = true;
+            this.wave_Tank2.IsRectangle = true;
+            this.wave_Tank2.IsShowRect = false;
+            this.wave_Tank2.Location = new System.Drawing.Point(973, 113);
+            this.wave_Tank2.MaxValue = 100;
+            this.wave_Tank2.Name = "wave_Tank2";
+            this.wave_Tank2.RectColor = System.Drawing.Color.White;
+            this.wave_Tank2.RectWidth = 4;
+            this.wave_Tank2.Size = new System.Drawing.Size(68, 119);
+            this.wave_Tank2.TabIndex = 13;
+            this.wave_Tank2.Value = 0;
+            this.wave_Tank2.ValueColor = System.Drawing.Color.Lime;
             // 
             // pictureBox3
             // 
@@ -546,26 +545,25 @@
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
             // 
-            // xbdWave1
+            // wave_Tank1
             // 
-            this.xbdWave1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(138)))), ((int)(((byte)(214)))));
-            this.xbdWave1.ConerRadius = 10;
-            this.xbdWave1.FillColor = System.Drawing.Color.Transparent;
-            this.xbdWave1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.xbdWave1.ForeColor = System.Drawing.Color.White;
-            this.xbdWave1.IsRadius = true;
-            this.xbdWave1.IsRectangle = true;
-            this.xbdWave1.IsShowRect = false;
-            this.xbdWave1.Location = new System.Drawing.Point(709, 115);
-            this.xbdWave1.MaxValue = 100;
-            this.xbdWave1.Name = "xbdWave1";
-            this.xbdWave1.RectColor = System.Drawing.Color.White;
-            this.xbdWave1.RectWidth = 4;
-            this.xbdWave1.Size = new System.Drawing.Size(68, 119);
-            this.xbdWave1.TabIndex = 13;
-            this.xbdWave1.Value = 0;
-            this.xbdWave1.ValueColor = System.Drawing.Color.Lime;
-  
+            this.wave_Tank1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(138)))), ((int)(((byte)(214)))));
+            this.wave_Tank1.ConerRadius = 10;
+            this.wave_Tank1.FillColor = System.Drawing.Color.Transparent;
+            this.wave_Tank1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.wave_Tank1.ForeColor = System.Drawing.Color.White;
+            this.wave_Tank1.IsRadius = true;
+            this.wave_Tank1.IsRectangle = true;
+            this.wave_Tank1.IsShowRect = false;
+            this.wave_Tank1.Location = new System.Drawing.Point(709, 115);
+            this.wave_Tank1.MaxValue = 100;
+            this.wave_Tank1.Name = "wave_Tank1";
+            this.wave_Tank1.RectColor = System.Drawing.Color.White;
+            this.wave_Tank1.RectWidth = 4;
+            this.wave_Tank1.Size = new System.Drawing.Size(68, 119);
+            this.wave_Tank1.TabIndex = 13;
+            this.wave_Tank1.Value = 0;
+            this.wave_Tank1.ValueColor = System.Drawing.Color.Lime;
             // 
             // xbdFlowControl5
             // 
@@ -640,51 +638,53 @@
             this.label27.TabIndex = 8;
             this.label27.Text = "进水阀";
             // 
-            // button4
+            // btn_Pump2
             // 
-            this.button4.BackgroundImage = global::xbd.PressurizationStationPro.Properties.Resources.Border_png;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(750, 374);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(78, 32);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "停止";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btn_Pump2.BackgroundImage = global::xbd.PressurizationStationPro.Properties.Resources.Border_png;
+            this.btn_Pump2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Pump2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btn_Pump2.FlatAppearance.BorderSize = 0;
+            this.btn_Pump2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Pump2.ForeColor = System.Drawing.Color.White;
+            this.btn_Pump2.Location = new System.Drawing.Point(750, 374);
+            this.btn_Pump2.Name = "btn_Pump2";
+            this.btn_Pump2.Size = new System.Drawing.Size(78, 32);
+            this.btn_Pump2.TabIndex = 3;
+            this.btn_Pump2.Text = "停止";
+            this.btn_Pump2.UseVisualStyleBackColor = true;
+            this.btn_Pump2.Click += new System.EventHandler(this.btn_Pump2_Click);
             // 
-            // button3
+            // btn_Pump1
             // 
-            this.button3.BackgroundImage = global::xbd.PressurizationStationPro.Properties.Resources.Border_png;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(582, 374);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(78, 32);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "停止";
-            this.button3.UseVisualStyleBackColor = true;
-    
+            this.btn_Pump1.BackgroundImage = global::xbd.PressurizationStationPro.Properties.Resources.Border_png;
+            this.btn_Pump1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Pump1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btn_Pump1.FlatAppearance.BorderSize = 0;
+            this.btn_Pump1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Pump1.ForeColor = System.Drawing.Color.White;
+            this.btn_Pump1.Location = new System.Drawing.Point(582, 374);
+            this.btn_Pump1.Name = "btn_Pump1";
+            this.btn_Pump1.Size = new System.Drawing.Size(78, 32);
+            this.btn_Pump1.TabIndex = 3;
+            this.btn_Pump1.Text = "停止";
+            this.btn_Pump1.UseVisualStyleBackColor = true;
+            this.btn_Pump1.Click += new System.EventHandler(this.btn_Pump1_Click);
             // 
-            // button2
+            // btn_SysRest
             // 
-            this.button2.BackgroundImage = global::xbd.PressurizationStationPro.Properties.Resources.Border_png;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(963, 7);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(78, 32);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "系统复位";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_SysRest.BackgroundImage = global::xbd.PressurizationStationPro.Properties.Resources.Border_png;
+            this.btn_SysRest.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_SysRest.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btn_SysRest.FlatAppearance.BorderSize = 0;
+            this.btn_SysRest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_SysRest.ForeColor = System.Drawing.Color.White;
+            this.btn_SysRest.Location = new System.Drawing.Point(963, 7);
+            this.btn_SysRest.Name = "btn_SysRest";
+            this.btn_SysRest.Size = new System.Drawing.Size(78, 32);
+            this.btn_SysRest.TabIndex = 3;
+            this.btn_SysRest.Text = "系统复位";
+            this.btn_SysRest.UseVisualStyleBackColor = true;
+            this.btn_SysRest.Click += new System.EventHandler(this.btn_SysRest_Click);
             // 
             // button1
             // 
@@ -757,9 +757,9 @@
             this.label28.ForeColor = System.Drawing.Color.White;
             this.label28.Location = new System.Drawing.Point(347, 150);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(68, 20);
+            this.label28.Size = new System.Drawing.Size(72, 20);
             this.label28.TabIndex = 8;
-            this.label28.Text = "1#进水泵";
+            this.label28.Text = "2 #进水泵";
             // 
             // label25
             // 
@@ -771,103 +771,105 @@
             this.label25.TabIndex = 8;
             this.label25.Text = "1#进水泵";
             // 
-            // xbdValve2
+            // valve_Out
             // 
-            this.xbdValve2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("xbdValve2.BackgroundImage")));
-            this.xbdValve2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.xbdValve2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.xbdValve2.IsVertical = false;
-            this.xbdValve2.Location = new System.Drawing.Point(388, 396);
-            this.xbdValve2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.xbdValve2.Name = "xbdValve2";
-            this.xbdValve2.Size = new System.Drawing.Size(42, 35);
-            this.xbdValve2.State = true;
-            this.xbdValve2.TabIndex = 10;
-            this.xbdValve2.ValveName = null;
+            this.valve_Out.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("valve_Out.BackgroundImage")));
+            this.valve_Out.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.valve_Out.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.valve_Out.IsVertical = false;
+            this.valve_Out.Location = new System.Drawing.Point(388, 396);
+            this.valve_Out.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.valve_Out.Name = "valve_Out";
+            this.valve_Out.Size = new System.Drawing.Size(42, 35);
+            this.valve_Out.State = true;
+            this.valve_Out.TabIndex = 10;
+            this.valve_Out.ValveName = null;
             // 
-            // xbdValve1
+            // valve_In
             // 
-            this.xbdValve1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("xbdValve1.BackgroundImage")));
-            this.xbdValve1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.xbdValve1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.xbdValve1.IsVertical = false;
-            this.xbdValve1.Location = new System.Drawing.Point(537, 32);
-            this.xbdValve1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.xbdValve1.Name = "xbdValve1";
-            this.xbdValve1.Size = new System.Drawing.Size(42, 35);
-            this.xbdValve1.State = true;
-            this.xbdValve1.TabIndex = 10;
-            this.xbdValve1.ValveName = null;
+            this.valve_In.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("valve_In.BackgroundImage")));
+            this.valve_In.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.valve_In.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.valve_In.IsVertical = false;
+            this.valve_In.Location = new System.Drawing.Point(537, 32);
+            this.valve_In.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.valve_In.Name = "valve_In";
+            this.valve_In.Size = new System.Drawing.Size(42, 35);
+            this.valve_In.State = true;
+            this.valve_In.TabIndex = 10;
+            this.valve_In.ValveName = null;
             // 
-            // xbdToggle2
+            // toggle_Pump2
             // 
-            this.xbdToggle2.Checked = true;
-            this.xbdToggle2.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.xbdToggle2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.xbdToggle2.Location = new System.Drawing.Point(338, 244);
-            this.xbdToggle2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.xbdToggle2.Name = "xbdToggle2";
-            this.xbdToggle2.Size = new System.Drawing.Size(77, 33);
-            this.xbdToggle2.SwitchType = xbd.ControlLib.SwitchType.Quadrilateral;
-            this.xbdToggle2.TabIndex = 9;
-            this.xbdToggle2.Texts = null;
-            this.xbdToggle2.TrueColor = System.Drawing.Color.LimeGreen;
+            this.toggle_Pump2.Checked = true;
+            this.toggle_Pump2.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.toggle_Pump2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.toggle_Pump2.Location = new System.Drawing.Point(338, 244);
+            this.toggle_Pump2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.toggle_Pump2.Name = "toggle_Pump2";
+            this.toggle_Pump2.Size = new System.Drawing.Size(77, 33);
+            this.toggle_Pump2.SwitchType = xbd.ControlLib.SwitchType.Quadrilateral;
+            this.toggle_Pump2.TabIndex = 9;
+            this.toggle_Pump2.Texts = null;
+            this.toggle_Pump2.TrueColor = System.Drawing.Color.LimeGreen;
+            this.toggle_Pump2.CheckedChanged += new System.EventHandler(this.toggle_Pump2_CheckedChanged);
             // 
-            // xbdToggle1
+            // toggle_Pump1
             // 
-            this.xbdToggle1.Checked = true;
-            this.xbdToggle1.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.xbdToggle1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.xbdToggle1.Location = new System.Drawing.Point(338, 95);
-            this.xbdToggle1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.xbdToggle1.Name = "xbdToggle1";
-            this.xbdToggle1.Size = new System.Drawing.Size(77, 33);
-            this.xbdToggle1.SwitchType = xbd.ControlLib.SwitchType.Quadrilateral;
-            this.xbdToggle1.TabIndex = 9;
-            this.xbdToggle1.Texts = null;
-            this.xbdToggle1.TrueColor = System.Drawing.Color.LimeGreen;
+            this.toggle_Pump1.Checked = true;
+            this.toggle_Pump1.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.toggle_Pump1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.toggle_Pump1.Location = new System.Drawing.Point(338, 95);
+            this.toggle_Pump1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.toggle_Pump1.Name = "toggle_Pump1";
+            this.toggle_Pump1.Size = new System.Drawing.Size(77, 33);
+            this.toggle_Pump1.SwitchType = xbd.ControlLib.SwitchType.Quadrilateral;
+            this.toggle_Pump1.TabIndex = 9;
+            this.toggle_Pump1.Texts = null;
+            this.toggle_Pump1.TrueColor = System.Drawing.Color.LimeGreen;
+            this.toggle_Pump1.CheckedChanged += new System.EventHandler(this.toggle_Pump1_CheckedChanged);
             // 
-            // xbdPump2
+            // pump_In2
             // 
-            this.xbdPump2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.xbdPump2.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(218)))), ((int)(((byte)(227)))));
-            this.xbdPump2.Color2 = System.Drawing.Color.LightGray;
-            this.xbdPump2.Color3 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(135)))), ((int)(((byte)(69)))));
-            this.xbdPump2.Color4 = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(208)))), ((int)(((byte)(214)))));
-            this.xbdPump2.Color5 = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(213)))), ((int)(((byte)(220)))));
-            this.xbdPump2.Color6 = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(160)))), ((int)(((byte)(169)))));
-            this.xbdPump2.Color7 = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(100)))), ((int)(((byte)(111)))));
-            this.xbdPump2.Export = 6;
-            this.xbdPump2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.xbdPump2.IsRun = false;
-            this.xbdPump2.Location = new System.Drawing.Point(338, 152);
-            this.xbdPump2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.xbdPump2.MoveSpeed = 1F;
-            this.xbdPump2.Name = "xbdPump2";
-            this.xbdPump2.Size = new System.Drawing.Size(84, 82);
-            this.xbdPump2.TabIndex = 7;
-            this.xbdPump2.Text = "xbdPump1";
+            this.pump_In2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.pump_In2.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(218)))), ((int)(((byte)(227)))));
+            this.pump_In2.Color2 = System.Drawing.Color.LightGray;
+            this.pump_In2.Color3 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(135)))), ((int)(((byte)(69)))));
+            this.pump_In2.Color4 = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(208)))), ((int)(((byte)(214)))));
+            this.pump_In2.Color5 = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(213)))), ((int)(((byte)(220)))));
+            this.pump_In2.Color6 = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(160)))), ((int)(((byte)(169)))));
+            this.pump_In2.Color7 = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(100)))), ((int)(((byte)(111)))));
+            this.pump_In2.Export = 6;
+            this.pump_In2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.pump_In2.IsRun = false;
+            this.pump_In2.Location = new System.Drawing.Point(338, 152);
+            this.pump_In2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pump_In2.MoveSpeed = 1F;
+            this.pump_In2.Name = "pump_In2";
+            this.pump_In2.Size = new System.Drawing.Size(84, 82);
+            this.pump_In2.TabIndex = 7;
+            this.pump_In2.Text = "xbdPump1";
             // 
-            // xbdPump1
+            // pump_In1
             // 
-            this.xbdPump1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.xbdPump1.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(218)))), ((int)(((byte)(227)))));
-            this.xbdPump1.Color2 = System.Drawing.Color.LightGray;
-            this.xbdPump1.Color3 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(135)))), ((int)(((byte)(69)))));
-            this.xbdPump1.Color4 = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(208)))), ((int)(((byte)(214)))));
-            this.xbdPump1.Color5 = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(213)))), ((int)(((byte)(220)))));
-            this.xbdPump1.Color6 = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(160)))), ((int)(((byte)(169)))));
-            this.xbdPump1.Color7 = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(100)))), ((int)(((byte)(111)))));
-            this.xbdPump1.Export = 6;
-            this.xbdPump1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.xbdPump1.IsRun = false;
-            this.xbdPump1.Location = new System.Drawing.Point(338, 3);
-            this.xbdPump1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.xbdPump1.MoveSpeed = 1F;
-            this.xbdPump1.Name = "xbdPump1";
-            this.xbdPump1.Size = new System.Drawing.Size(84, 82);
-            this.xbdPump1.TabIndex = 7;
-            this.xbdPump1.Text = "xbdPump1";
+            this.pump_In1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.pump_In1.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(218)))), ((int)(((byte)(227)))));
+            this.pump_In1.Color2 = System.Drawing.Color.LightGray;
+            this.pump_In1.Color3 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(135)))), ((int)(((byte)(69)))));
+            this.pump_In1.Color4 = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(208)))), ((int)(((byte)(214)))));
+            this.pump_In1.Color5 = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(213)))), ((int)(((byte)(220)))));
+            this.pump_In1.Color6 = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(160)))), ((int)(((byte)(169)))));
+            this.pump_In1.Color7 = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(100)))), ((int)(((byte)(111)))));
+            this.pump_In1.Export = 6;
+            this.pump_In1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.pump_In1.IsRun = false;
+            this.pump_In1.Location = new System.Drawing.Point(338, 3);
+            this.pump_In1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pump_In1.MoveSpeed = 1F;
+            this.pump_In1.Name = "pump_In1";
+            this.pump_In1.Size = new System.Drawing.Size(84, 82);
+            this.pump_In1.TabIndex = 7;
+            this.pump_In1.Text = "xbdPump1";
             // 
             // xbdFlowControl11
             // 
@@ -983,11 +985,11 @@
             this.panel5.Controls.Add(this.label18);
             this.panel5.Controls.Add(this.label15);
             this.panel5.Controls.Add(this.label10);
-            this.panel5.Controls.Add(this.label23);
-            this.panel5.Controls.Add(this.label20);
-            this.panel5.Controls.Add(this.label17);
-            this.panel5.Controls.Add(this.label14);
-            this.panel5.Controls.Add(this.label9);
+            this.panel5.Controls.Add(this.lbl_PressureTankOut);
+            this.panel5.Controls.Add(this.lbl_LevelTank2);
+            this.panel5.Controls.Add(this.lbl_PressureTank2);
+            this.panel5.Controls.Add(this.lbl_LevelTank1);
+            this.panel5.Controls.Add(this.lbl_PressureTank1);
             this.panel5.Controls.Add(this.label22);
             this.panel5.Controls.Add(this.label19);
             this.panel5.Controls.Add(this.label16);
@@ -1020,7 +1022,7 @@
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(35, 21);
             this.label21.TabIndex = 5;
-            this.label21.Text = "bar";
+            this.label21.Text = "m ";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label18
@@ -1059,70 +1061,70 @@
             this.label10.Text = "bar";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label23
+            // lbl_PressureTankOut
             // 
-            this.label23.AutoSize = true;
-            this.label23.BackColor = System.Drawing.Color.Transparent;
-            this.label23.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label23.ForeColor = System.Drawing.Color.White;
-            this.label23.Location = new System.Drawing.Point(105, 178);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(44, 20);
-            this.label23.TabIndex = 5;
-            this.label23.Text = "00.00";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_PressureTankOut.AutoSize = true;
+            this.lbl_PressureTankOut.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_PressureTankOut.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_PressureTankOut.ForeColor = System.Drawing.Color.White;
+            this.lbl_PressureTankOut.Location = new System.Drawing.Point(105, 178);
+            this.lbl_PressureTankOut.Name = "lbl_PressureTankOut";
+            this.lbl_PressureTankOut.Size = new System.Drawing.Size(44, 20);
+            this.lbl_PressureTankOut.TabIndex = 5;
+            this.lbl_PressureTankOut.Text = "00.00";
+            this.lbl_PressureTankOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label20
+            // lbl_LevelTank2
             // 
-            this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.Color.Transparent;
-            this.label20.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(105, 145);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(44, 20);
-            this.label20.TabIndex = 5;
-            this.label20.Text = "00.00";
-            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_LevelTank2.AutoSize = true;
+            this.lbl_LevelTank2.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_LevelTank2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_LevelTank2.ForeColor = System.Drawing.Color.White;
+            this.lbl_LevelTank2.Location = new System.Drawing.Point(105, 145);
+            this.lbl_LevelTank2.Name = "lbl_LevelTank2";
+            this.lbl_LevelTank2.Size = new System.Drawing.Size(44, 20);
+            this.lbl_LevelTank2.TabIndex = 5;
+            this.lbl_LevelTank2.Text = "00.00";
+            this.lbl_LevelTank2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label17
+            // lbl_PressureTank2
             // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(105, 112);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(44, 20);
-            this.label17.TabIndex = 5;
-            this.label17.Text = "00.00";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_PressureTank2.AutoSize = true;
+            this.lbl_PressureTank2.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_PressureTank2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_PressureTank2.ForeColor = System.Drawing.Color.White;
+            this.lbl_PressureTank2.Location = new System.Drawing.Point(105, 112);
+            this.lbl_PressureTank2.Name = "lbl_PressureTank2";
+            this.lbl_PressureTank2.Size = new System.Drawing.Size(44, 20);
+            this.lbl_PressureTank2.TabIndex = 5;
+            this.lbl_PressureTank2.Text = "00.00";
+            this.lbl_PressureTank2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label14
+            // lbl_LevelTank1
             // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(105, 79);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(44, 20);
-            this.label14.TabIndex = 5;
-            this.label14.Text = "00.00";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_LevelTank1.AutoSize = true;
+            this.lbl_LevelTank1.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_LevelTank1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_LevelTank1.ForeColor = System.Drawing.Color.White;
+            this.lbl_LevelTank1.Location = new System.Drawing.Point(105, 79);
+            this.lbl_LevelTank1.Name = "lbl_LevelTank1";
+            this.lbl_LevelTank1.Size = new System.Drawing.Size(44, 20);
+            this.lbl_LevelTank1.TabIndex = 5;
+            this.lbl_LevelTank1.Text = "00.00";
+            this.lbl_LevelTank1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label9
+            // lbl_PressureTank1
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(105, 46);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(44, 20);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "00.00";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_PressureTank1.AutoSize = true;
+            this.lbl_PressureTank1.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_PressureTank1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_PressureTank1.ForeColor = System.Drawing.Color.White;
+            this.lbl_PressureTank1.Location = new System.Drawing.Point(105, 46);
+            this.lbl_PressureTank1.Name = "lbl_PressureTank1";
+            this.lbl_PressureTank1.Size = new System.Drawing.Size(44, 20);
+            this.lbl_PressureTank1.TabIndex = 5;
+            this.lbl_PressureTank1.Text = "00.00";
+            this.lbl_PressureTank1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label22
             // 
@@ -1132,9 +1134,9 @@
             this.label22.ForeColor = System.Drawing.Color.White;
             this.label22.Location = new System.Drawing.Point(12, 178);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(96, 20);
+            this.label22.Size = new System.Drawing.Size(93, 20);
             this.label22.TabIndex = 5;
-            this.label22.Text = "1#水箱压力：";
+            this.label22.Text = "出水管压力：";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label19
@@ -1147,7 +1149,7 @@
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(96, 20);
             this.label19.TabIndex = 5;
-            this.label19.Text = "1#水箱压力：";
+            this.label19.Text = "2#水箱液位：";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label16
@@ -1160,7 +1162,7 @@
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(96, 20);
             this.label16.TabIndex = 5;
-            this.label16.Text = "1#水箱压力：";
+            this.label16.Text = "2#水箱压力：";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label13
@@ -1173,7 +1175,7 @@
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(96, 20);
             this.label13.TabIndex = 5;
-            this.label13.Text = "1#水箱压力：";
+            this.label13.Text = "1#水箱液位：";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label11
@@ -1212,9 +1214,9 @@
             // 
             this.panel4.BackgroundImage = global::xbd.PressurizationStationPro.Properties.Resources.ParamPanel_png;
             this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel4.Controls.Add(this.xbdState3);
-            this.panel4.Controls.Add(this.xbdState2);
-            this.panel4.Controls.Add(this.xbdState1);
+            this.panel4.Controls.Add(this.led_SysAlarmState);
+            this.panel4.Controls.Add(this.led_SysRunState);
+            this.panel4.Controls.Add(this.led_PLCState);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.label5);
@@ -1224,41 +1226,41 @@
             this.panel4.Size = new System.Drawing.Size(210, 152);
             this.panel4.TabIndex = 4;
             // 
-            // xbdState3
+            // led_SysAlarmState
             // 
-            this.xbdState3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("xbdState3.BackgroundImage")));
-            this.xbdState3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.xbdState3.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.xbdState3.Location = new System.Drawing.Point(141, 108);
-            this.xbdState3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.xbdState3.Name = "xbdState3";
-            this.xbdState3.Size = new System.Drawing.Size(24, 24);
-            this.xbdState3.State = false;
-            this.xbdState3.TabIndex = 6;
+            this.led_SysAlarmState.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("led_SysAlarmState.BackgroundImage")));
+            this.led_SysAlarmState.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.led_SysAlarmState.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.led_SysAlarmState.Location = new System.Drawing.Point(141, 108);
+            this.led_SysAlarmState.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.led_SysAlarmState.Name = "led_SysAlarmState";
+            this.led_SysAlarmState.Size = new System.Drawing.Size(24, 24);
+            this.led_SysAlarmState.State = false;
+            this.led_SysAlarmState.TabIndex = 6;
             // 
-            // xbdState2
+            // led_SysRunState
             // 
-            this.xbdState2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("xbdState2.BackgroundImage")));
-            this.xbdState2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.xbdState2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.xbdState2.Location = new System.Drawing.Point(141, 77);
-            this.xbdState2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.xbdState2.Name = "xbdState2";
-            this.xbdState2.Size = new System.Drawing.Size(24, 24);
-            this.xbdState2.State = false;
-            this.xbdState2.TabIndex = 6;
+            this.led_SysRunState.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("led_SysRunState.BackgroundImage")));
+            this.led_SysRunState.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.led_SysRunState.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.led_SysRunState.Location = new System.Drawing.Point(141, 77);
+            this.led_SysRunState.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.led_SysRunState.Name = "led_SysRunState";
+            this.led_SysRunState.Size = new System.Drawing.Size(24, 24);
+            this.led_SysRunState.State = false;
+            this.led_SysRunState.TabIndex = 6;
             // 
-            // xbdState1
+            // led_PLCState
             // 
-            this.xbdState1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("xbdState1.BackgroundImage")));
-            this.xbdState1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.xbdState1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.xbdState1.Location = new System.Drawing.Point(141, 46);
-            this.xbdState1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.xbdState1.Name = "xbdState1";
-            this.xbdState1.Size = new System.Drawing.Size(24, 24);
-            this.xbdState1.State = false;
-            this.xbdState1.TabIndex = 6;
+            this.led_PLCState.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("led_PLCState.BackgroundImage")));
+            this.led_PLCState.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.led_PLCState.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.led_PLCState.Location = new System.Drawing.Point(141, 46);
+            this.led_PLCState.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.led_PLCState.Name = "led_PLCState";
+            this.led_PLCState.Size = new System.Drawing.Size(24, 24);
+            this.led_PLCState.State = false;
+            this.led_PLCState.TabIndex = 6;
             // 
             // label8
             // 
@@ -1313,128 +1315,38 @@
             // 
             this.panel3.BackgroundImage = global::xbd.PressurizationStationPro.Properties.Resources.DataPanel_png;
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Controls.Add(this.meterShow6);
-            this.panel3.Controls.Add(this.meterShow5);
-            this.panel3.Controls.Add(this.meterShow4);
-            this.panel3.Controls.Add(this.meterShow3);
-            this.panel3.Controls.Add(this.meterShow2);
-            this.panel3.Controls.Add(this.meterShow1);
+            this.panel3.Controls.Add(this.ms_TankPressureOut);
+            this.panel3.Controls.Add(this.ms_TankPressureIn2);
+            this.panel3.Controls.Add(this.ms_TankPressureIn1);
+            this.panel3.Controls.Add(this.ms_TempIn2);
+            this.panel3.Controls.Add(this.ms_TempOut);
+            this.panel3.Controls.Add(this.ms_TempIn1);
             this.panel3.Location = new System.Drawing.Point(22, 451);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(990, 188);
             this.panel3.TabIndex = 5;
             // 
-            // meterShow6
-            // 
-            this.meterShow6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.meterShow6.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.meterShow6.Location = new System.Drawing.Point(831, 10);
-            this.meterShow6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.meterShow6.MeterMaxValue = 10F;
-            this.meterShow6.MeterMinValue = 0F;
-            this.meterShow6.Name = "meterShow6";
-            this.meterShow6.ParmName = "水箱出口压力";
-            this.meterShow6.ParmValue = 0F;
-            this.meterShow6.Size = new System.Drawing.Size(147, 168);
-            this.meterShow6.TabIndex = 5;
-            this.meterShow6.Unit = "℃";
-            // 
-            // meterShow5
-            // 
-            this.meterShow5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.meterShow5.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.meterShow5.Location = new System.Drawing.Point(669, 11);
-            this.meterShow5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.meterShow5.MeterMaxValue = 10F;
-            this.meterShow5.MeterMinValue = 0F;
-            this.meterShow5.Name = "meterShow5";
-            this.meterShow5.ParmName = "2#水箱压力";
-            this.meterShow5.ParmValue = 0F;
-            this.meterShow5.Size = new System.Drawing.Size(147, 168);
-            this.meterShow5.TabIndex = 4;
-            this.meterShow5.Unit = "℃";
-            // 
-            // meterShow4
-            // 
-            this.meterShow4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.meterShow4.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.meterShow4.Location = new System.Drawing.Point(505, 10);
-            this.meterShow4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.meterShow4.MeterMaxValue = 10F;
-            this.meterShow4.MeterMinValue = 0F;
-            this.meterShow4.Name = "meterShow4";
-            this.meterShow4.ParmName = "1#水箱压力";
-            this.meterShow4.ParmValue = 0F;
-            this.meterShow4.Size = new System.Drawing.Size(147, 168);
-            this.meterShow4.TabIndex = 3;
-            this.meterShow4.Unit = "℃";
-            // 
-            // meterShow3
-            // 
-            this.meterShow3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.meterShow3.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.meterShow3.Location = new System.Drawing.Point(179, 10);
-            this.meterShow3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.meterShow3.MeterMaxValue = 100F;
-            this.meterShow3.MeterMinValue = 0F;
-            this.meterShow3.Name = "meterShow3";
-            this.meterShow3.ParmName = "2#出水管温度";
-            this.meterShow3.ParmValue = 0F;
-            this.meterShow3.Size = new System.Drawing.Size(147, 168);
-            this.meterShow3.TabIndex = 2;
-            this.meterShow3.Unit = "℃";
-            // 
-            // meterShow2
-            // 
-            this.meterShow2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.meterShow2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.meterShow2.Location = new System.Drawing.Point(342, 10);
-            this.meterShow2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.meterShow2.MeterMaxValue = 100F;
-            this.meterShow2.MeterMinValue = 0F;
-            this.meterShow2.Name = "meterShow2";
-            this.meterShow2.ParmName = "出水管温度";
-            this.meterShow2.ParmValue = 0F;
-            this.meterShow2.Size = new System.Drawing.Size(147, 168);
-            this.meterShow2.TabIndex = 1;
-            this.meterShow2.Unit = "℃";
-            // 
-            // meterShow1
-            // 
-            this.meterShow1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.meterShow1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.meterShow1.Location = new System.Drawing.Point(16, 10);
-            this.meterShow1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.meterShow1.MeterMaxValue = 100F;
-            this.meterShow1.MeterMinValue = 0F;
-            this.meterShow1.Name = "meterShow1";
-            this.meterShow1.ParmName = "1#出水管温度";
-            this.meterShow1.ParmValue = 0F;
-            this.meterShow1.Size = new System.Drawing.Size(147, 168);
-            this.meterShow1.TabIndex = 0;
-            this.meterShow1.Unit = "℃";
-            // 
             // panel2
             // 
             this.panel2.BackgroundImage = global::xbd.PressurizationStationPro.Properties.Resources.ParamPanel_png;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.lbl__PressureOut);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.xbdAnalogMeter2);
+            this.panel2.Controls.Add(this.meter_PressureOut);
             this.panel2.Location = new System.Drawing.Point(22, 231);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(210, 200);
             this.panel2.TabIndex = 4;
             // 
-            // label3
+            // lbl__PressureOut
             // 
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.label3.Location = new System.Drawing.Point(42, 140);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 32);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "0.00 Bar";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl__PressureOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.lbl__PressureOut.Location = new System.Drawing.Point(42, 140);
+            this.lbl__PressureOut.Name = "lbl__PressureOut";
+            this.lbl__PressureOut.Size = new System.Drawing.Size(93, 32);
+            this.lbl__PressureOut.TabIndex = 3;
+            this.lbl__PressureOut.Text = "0.00 Bar";
+            this.lbl__PressureOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
@@ -1446,46 +1358,46 @@
             this.label4.TabIndex = 1;
             this.label4.Text = "进水压力";
             // 
-            // xbdAnalogMeter2
+            // meter_PressureOut
             // 
-            this.xbdAnalogMeter2.BodyColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.xbdAnalogMeter2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.xbdAnalogMeter2.Location = new System.Drawing.Point(0, 5);
-            this.xbdAnalogMeter2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.xbdAnalogMeter2.MaxValue = 10D;
-            this.xbdAnalogMeter2.MinValue = 0D;
-            this.xbdAnalogMeter2.Name = "xbdAnalogMeter2";
-            this.xbdAnalogMeter2.NeedleColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.xbdAnalogMeter2.Renderer = null;
-            this.xbdAnalogMeter2.ScaleColor = System.Drawing.Color.White;
-            this.xbdAnalogMeter2.ScaleDivisions = 11;
-            this.xbdAnalogMeter2.ScaleSubDivisions = 4;
-            this.xbdAnalogMeter2.Size = new System.Drawing.Size(206, 177);
-            this.xbdAnalogMeter2.TabIndex = 0;
-            this.xbdAnalogMeter2.Value = 0D;
-            this.xbdAnalogMeter2.ViewGlass = false;
+            this.meter_PressureOut.BodyColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.meter_PressureOut.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.meter_PressureOut.Location = new System.Drawing.Point(0, 5);
+            this.meter_PressureOut.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.meter_PressureOut.MaxValue = 10D;
+            this.meter_PressureOut.MinValue = 0D;
+            this.meter_PressureOut.Name = "meter_PressureOut";
+            this.meter_PressureOut.NeedleColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.meter_PressureOut.Renderer = null;
+            this.meter_PressureOut.ScaleColor = System.Drawing.Color.White;
+            this.meter_PressureOut.ScaleDivisions = 11;
+            this.meter_PressureOut.ScaleSubDivisions = 4;
+            this.meter_PressureOut.Size = new System.Drawing.Size(206, 177);
+            this.meter_PressureOut.TabIndex = 0;
+            this.meter_PressureOut.Value = 0D;
+            this.meter_PressureOut.ViewGlass = false;
             // 
             // panel1
             // 
             this.panel1.BackgroundImage = global::xbd.PressurizationStationPro.Properties.Resources.ParamPanel_png;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.lbl_ParmValue);
+            this.panel1.Controls.Add(this.lbl__PressureIn);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.xbdAnalogMeter1);
+            this.panel1.Controls.Add(this.meter_PressureIn);
             this.panel1.Location = new System.Drawing.Point(22, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(210, 200);
             this.panel1.TabIndex = 0;
             // 
-            // lbl_ParmValue
+            // lbl__PressureIn
             // 
-            this.lbl_ParmValue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lbl_ParmValue.Location = new System.Drawing.Point(42, 140);
-            this.lbl_ParmValue.Name = "lbl_ParmValue";
-            this.lbl_ParmValue.Size = new System.Drawing.Size(93, 32);
-            this.lbl_ParmValue.TabIndex = 3;
-            this.lbl_ParmValue.Text = "0.00 Bar";
-            this.lbl_ParmValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl__PressureIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.lbl__PressureIn.Location = new System.Drawing.Point(42, 140);
+            this.lbl__PressureIn.Name = "lbl__PressureIn";
+            this.lbl__PressureIn.Size = new System.Drawing.Size(93, 32);
+            this.lbl__PressureIn.TabIndex = 3;
+            this.lbl__PressureIn.Text = "0.00 Bar";
+            this.lbl__PressureIn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
@@ -1497,24 +1409,24 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "进水压力";
             // 
-            // xbdAnalogMeter1
+            // meter_PressureIn
             // 
-            this.xbdAnalogMeter1.BodyColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            this.xbdAnalogMeter1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.xbdAnalogMeter1.Location = new System.Drawing.Point(0, 5);
-            this.xbdAnalogMeter1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.xbdAnalogMeter1.MaxValue = 10D;
-            this.xbdAnalogMeter1.MinValue = 0D;
-            this.xbdAnalogMeter1.Name = "xbdAnalogMeter1";
-            this.xbdAnalogMeter1.NeedleColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.xbdAnalogMeter1.Renderer = null;
-            this.xbdAnalogMeter1.ScaleColor = System.Drawing.Color.White;
-            this.xbdAnalogMeter1.ScaleDivisions = 11;
-            this.xbdAnalogMeter1.ScaleSubDivisions = 4;
-            this.xbdAnalogMeter1.Size = new System.Drawing.Size(206, 177);
-            this.xbdAnalogMeter1.TabIndex = 0;
-            this.xbdAnalogMeter1.Value = 0D;
-            this.xbdAnalogMeter1.ViewGlass = false;
+            this.meter_PressureIn.BodyColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.meter_PressureIn.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.meter_PressureIn.Location = new System.Drawing.Point(0, 5);
+            this.meter_PressureIn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.meter_PressureIn.MaxValue = 10D;
+            this.meter_PressureIn.MinValue = 0D;
+            this.meter_PressureIn.Name = "meter_PressureIn";
+            this.meter_PressureIn.NeedleColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.meter_PressureIn.Renderer = null;
+            this.meter_PressureIn.ScaleColor = System.Drawing.Color.White;
+            this.meter_PressureIn.ScaleDivisions = 11;
+            this.meter_PressureIn.ScaleSubDivisions = 4;
+            this.meter_PressureIn.Size = new System.Drawing.Size(206, 177);
+            this.meter_PressureIn.TabIndex = 0;
+            this.meter_PressureIn.Value = 0D;
+            this.meter_PressureIn.ViewGlass = false;
             // 
             // top_Panel
             // 
@@ -1531,7 +1443,6 @@
             this.top_Panel.Name = "top_Panel";
             this.top_Panel.Size = new System.Drawing.Size(1280, 77);
             this.top_Panel.TabIndex = 0;
-
             // 
             // lbl_Time
             // 
@@ -1559,6 +1470,7 @@
             this.btn_Exit.TabIndex = 4;
             this.btn_Exit.Text = "退出系统";
             this.btn_Exit.UseVisualStyleBackColor = true;
+            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
             // btn_Table
             // 
@@ -1616,6 +1528,96 @@
             this.label1.Text = "智慧加压站SCADA监控系统";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // ms_TankPressureOut
+            // 
+            this.ms_TankPressureOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.ms_TankPressureOut.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ms_TankPressureOut.Location = new System.Drawing.Point(831, 10);
+            this.ms_TankPressureOut.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ms_TankPressureOut.MeterMaxValue = 10F;
+            this.ms_TankPressureOut.MeterMinValue = 0F;
+            this.ms_TankPressureOut.Name = "ms_TankPressureOut";
+            this.ms_TankPressureOut.ParmName = "水箱出口压力";
+            this.ms_TankPressureOut.ParmValue = 0F;
+            this.ms_TankPressureOut.Size = new System.Drawing.Size(147, 168);
+            this.ms_TankPressureOut.TabIndex = 5;
+            this.ms_TankPressureOut.Unit = "℃";
+            // 
+            // ms_TankPressureIn2
+            // 
+            this.ms_TankPressureIn2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.ms_TankPressureIn2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ms_TankPressureIn2.Location = new System.Drawing.Point(669, 11);
+            this.ms_TankPressureIn2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ms_TankPressureIn2.MeterMaxValue = 10F;
+            this.ms_TankPressureIn2.MeterMinValue = 0F;
+            this.ms_TankPressureIn2.Name = "ms_TankPressureIn2";
+            this.ms_TankPressureIn2.ParmName = "2#水箱压力";
+            this.ms_TankPressureIn2.ParmValue = 0F;
+            this.ms_TankPressureIn2.Size = new System.Drawing.Size(147, 168);
+            this.ms_TankPressureIn2.TabIndex = 4;
+            this.ms_TankPressureIn2.Unit = "℃";
+            // 
+            // ms_TankPressureIn1
+            // 
+            this.ms_TankPressureIn1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.ms_TankPressureIn1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ms_TankPressureIn1.Location = new System.Drawing.Point(505, 10);
+            this.ms_TankPressureIn1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ms_TankPressureIn1.MeterMaxValue = 10F;
+            this.ms_TankPressureIn1.MeterMinValue = 0F;
+            this.ms_TankPressureIn1.Name = "ms_TankPressureIn1";
+            this.ms_TankPressureIn1.ParmName = "1#水箱压力";
+            this.ms_TankPressureIn1.ParmValue = 0F;
+            this.ms_TankPressureIn1.Size = new System.Drawing.Size(147, 168);
+            this.ms_TankPressureIn1.TabIndex = 3;
+            this.ms_TankPressureIn1.Unit = "℃";
+            // 
+            // ms_TempIn2
+            // 
+            this.ms_TempIn2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.ms_TempIn2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ms_TempIn2.Location = new System.Drawing.Point(179, 10);
+            this.ms_TempIn2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ms_TempIn2.MeterMaxValue = 100F;
+            this.ms_TempIn2.MeterMinValue = 0F;
+            this.ms_TempIn2.Name = "ms_TempIn2";
+            this.ms_TempIn2.ParmName = "2#出水管温度";
+            this.ms_TempIn2.ParmValue = 0F;
+            this.ms_TempIn2.Size = new System.Drawing.Size(147, 168);
+            this.ms_TempIn2.TabIndex = 2;
+            this.ms_TempIn2.Unit = "℃";
+            // 
+            // ms_TempOut
+            // 
+            this.ms_TempOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.ms_TempOut.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ms_TempOut.Location = new System.Drawing.Point(342, 10);
+            this.ms_TempOut.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ms_TempOut.MeterMaxValue = 100F;
+            this.ms_TempOut.MeterMinValue = 0F;
+            this.ms_TempOut.Name = "ms_TempOut";
+            this.ms_TempOut.ParmName = "出水管温度";
+            this.ms_TempOut.ParmValue = 0F;
+            this.ms_TempOut.Size = new System.Drawing.Size(147, 168);
+            this.ms_TempOut.TabIndex = 1;
+            this.ms_TempOut.Unit = "℃";
+            // 
+            // ms_TempIn1
+            // 
+            this.ms_TempIn1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.ms_TempIn1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ms_TempIn1.Location = new System.Drawing.Point(16, 10);
+            this.ms_TempIn1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ms_TempIn1.MeterMaxValue = 100F;
+            this.ms_TempIn1.MeterMinValue = 0F;
+            this.ms_TempIn1.Name = "ms_TempIn1";
+            this.ms_TempIn1.ParmName = "1#出水管温度";
+            this.ms_TempIn1.ParmValue = 0F;
+            this.ms_TempIn1.Size = new System.Drawing.Size(147, 168);
+            this.ms_TempIn1.TabIndex = 0;
+            this.ms_TempIn1.Unit = "℃";
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -1661,73 +1663,73 @@
         private System.Windows.Forms.Button btn_Record;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
-        private ControlLib.xbdAnalogMeter xbdAnalogMeter1;
+        private ControlLib.xbdAnalogMeter meter_PressureIn;
         private System.Windows.Forms.Label lbl_Time;
-        private System.Windows.Forms.Label lbl_ParmValue;
+        private System.Windows.Forms.Label lbl__PressureIn;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbl__PressureOut;
         private System.Windows.Forms.Label label4;
-        private ControlLib.xbdAnalogMeter xbdAnalogMeter2;
-        private MeterShow meterShow1;
+        private ControlLib.xbdAnalogMeter meter_PressureOut;
+        private MeterShow ms_TempIn1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label6;
-        private MeterShow meterShow6;
-        private MeterShow meterShow5;
-        private MeterShow meterShow4;
-        private MeterShow meterShow3;
-        private MeterShow meterShow2;
+        private MeterShow ms_TankPressureOut;
+        private MeterShow ms_TankPressureIn2;
+        private MeterShow ms_TankPressureIn1;
+        private MeterShow ms_TempIn2;
+        private MeterShow ms_TempOut;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lbl_PressureTank2;
+        private System.Windows.Forms.Label lbl_LevelTank1;
+        private System.Windows.Forms.Label lbl_PressureTank1;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private ControlLib.xbdState xbdState3;
-        private ControlLib.xbdState xbdState2;
-        private ControlLib.xbdState xbdState1;
+        private ControlLib.xbdState led_SysAlarmState;
+        private ControlLib.xbdState led_SysRunState;
+        private ControlLib.xbdState led_PLCState;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label lbl_PressureTankOut;
+        private System.Windows.Forms.Label lbl_LevelTank2;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Panel panel6;
         private ControlLib.xbdFlowControl xbdFlowControl1;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label25;
-        private ControlLib.xbdValve xbdValve1;
-        private ControlLib.xbdToggle xbdToggle1;
-        private ControlLib.xbdPump xbdPump1;
-        private System.Windows.Forms.Button button2;
+        private ControlLib.xbdValve valve_In;
+        private ControlLib.xbdToggle toggle_Pump1;
+        private ControlLib.xbdPump pump_In1;
+        private System.Windows.Forms.Button btn_SysRest;
         private System.Windows.Forms.Button button1;
-        private ControlLib.xbdToggle xbdToggle2;
-        private ControlLib.xbdPump xbdPump2;
+        private ControlLib.xbdToggle toggle_Pump2;
+        private ControlLib.xbdPump pump_In2;
         private ControlLib.xbdFlowControl xbdFlowControl2;
-        private ControlLib.xbdWave xbdWave1;
+        private ControlLib.xbdWave wave_Tank1;
         private ControlLib.xbdFlowControl xbdFlowControl4;
         private ControlLib.xbdFlowControl xbdFlowControl3;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private ControlLib.xbdWave xbdWave2;
+        private ControlLib.xbdWave wave_Tank2;
         private ControlLib.xbdFlowControl xbdFlowControl5;
         private ControlLib.xbdFlowControl xbdFlowControl6;
         private ControlLib.xbdFlowControl xbdFlowControl7;
-        private ControlLib.xbdMotor xbdMotor1;
+        private ControlLib.xbdMotor motor_Pump2;
         private ControlLib.xbdFlowControl xbdFlowControl9;
         private ControlLib.xbdFlowControl xbdFlowControl8;
         private ControlLib.xbdFlowControl xbdFlowControl10;
-        private ControlLib.xbdMotor xbdMotor2;
-        private ControlLib.xbdValve xbdValve2;
+        private ControlLib.xbdMotor motor_Pump1;
+        private ControlLib.xbdValve valve_Out;
         private ControlLib.xbdFlowControl xbdFlowControl11;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label35;
@@ -1743,19 +1745,19 @@
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label lbl_TempIn1;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_Pump2;
+        private System.Windows.Forms.Button btn_Pump1;
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.Label label50;
-        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label lbl_TempOut;
+        private System.Windows.Forms.Label lbl_PreTankOut;
+        private System.Windows.Forms.Label lbl_TempIn2;
     }
 }
 
