@@ -132,7 +132,7 @@ namespace xbd.PressurizationStationPro
             Task.Run(new Action(() => { PLCCommlication(); }));
 
             //采集摄像头
-             cameraHelper = new CameraHelper(sysInfo.CameraIndex,this.vsp_Panel);
+            cameraHelper = new CameraHelper(sysInfo.CameraIndex,this.vsp_Panel);
             cameraHelper.StartCamera();
         }
 
@@ -232,7 +232,7 @@ namespace xbd.PressurizationStationPro
                 this.ms_TankPressureOut.ParmValue = plcData.PressureTankOut;
 
                 //系统状态
-                this.led_SysRunState.State = plcData.SysRunState;
+                this.led_SysRunState.State = !plcData.SysRunState;
                 this.led_SysAlarmState.State = ! plcData.SysAlarmState;
 
                 //系统参数
