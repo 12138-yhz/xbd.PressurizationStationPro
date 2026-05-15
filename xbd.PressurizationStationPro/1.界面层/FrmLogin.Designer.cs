@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lbl_Exit = new System.Windows.Forms.Label();
-            this.cmb_User = new System.Windows.Forms.ComboBox();
+            this.tex_Pwd = new System.Windows.Forms.TextBox();
             this.btn_Login = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cmb_User = new System.Windows.Forms.ComboBox();
+            this.lbl_Exit = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackgroundImage = global::xbd.PressurizationStationPro.Properties.Resources.Login_png;
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.tex_Pwd);
             this.panel1.Controls.Add(this.btn_Login);
             this.panel1.Controls.Add(this.cmb_User);
             this.panel1.Controls.Add(this.lbl_Exit);
@@ -50,43 +50,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(433, 315);
             this.panel1.TabIndex = 0;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Panel_MouseMove);
             // 
-            // label1
+            // tex_Pwd
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(11, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(250, 26);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "智慧加压站SCADA监控系统";
-            // 
-            // lbl_Exit
-            // 
-            this.lbl_Exit.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_Exit.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_Exit.ForeColor = System.Drawing.Color.White;
-            this.lbl_Exit.Location = new System.Drawing.Point(395, 4);
-            this.lbl_Exit.Name = "lbl_Exit";
-            this.lbl_Exit.Size = new System.Drawing.Size(35, 35);
-            this.lbl_Exit.TabIndex = 1;
-            this.lbl_Exit.Text = "X";
-            this.lbl_Exit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // cmb_User
-            // 
-            this.cmb_User.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(20)))), ((int)(((byte)(62)))));
-            this.cmb_User.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmb_User.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.cmb_User.ForeColor = System.Drawing.Color.White;
-            this.cmb_User.FormattingEnabled = true;
-            this.cmb_User.Location = new System.Drawing.Point(140, 140);
-            this.cmb_User.Name = "cmb_User";
-            this.cmb_User.Size = new System.Drawing.Size(180, 29);
-            this.cmb_User.TabIndex = 2;
-            this.cmb_User.Text = "7755";
+            this.tex_Pwd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(20)))), ((int)(((byte)(62)))));
+            this.tex_Pwd.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.tex_Pwd.ForeColor = System.Drawing.Color.White;
+            this.tex_Pwd.Location = new System.Drawing.Point(140, 182);
+            this.tex_Pwd.Name = "tex_Pwd";
+            this.tex_Pwd.PasswordChar = '*';
+            this.tex_Pwd.Size = new System.Drawing.Size(180, 29);
+            this.tex_Pwd.TabIndex = 5;
             // 
             // btn_Login
             // 
@@ -104,18 +80,44 @@
             this.btn_Login.TabIndex = 4;
             this.btn_Login.Text = "登  录";
             this.btn_Login.UseVisualStyleBackColor = false;
+            this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
             // 
-            // textBox1
+            // cmb_User
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(20)))), ((int)(((byte)(62)))));
-            this.textBox1.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(140, 182);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '*';
-            this.textBox1.Size = new System.Drawing.Size(180, 29);
-            this.textBox1.TabIndex = 5;
-            this.textBox1.Text = "99999";
+            this.cmb_User.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(20)))), ((int)(((byte)(62)))));
+            this.cmb_User.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmb_User.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.cmb_User.ForeColor = System.Drawing.Color.White;
+            this.cmb_User.FormattingEnabled = true;
+            this.cmb_User.Location = new System.Drawing.Point(140, 140);
+            this.cmb_User.Name = "cmb_User";
+            this.cmb_User.Size = new System.Drawing.Size(180, 29);
+            this.cmb_User.TabIndex = 2;
+            // 
+            // lbl_Exit
+            // 
+            this.lbl_Exit.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Exit.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_Exit.ForeColor = System.Drawing.Color.White;
+            this.lbl_Exit.Location = new System.Drawing.Point(395, 4);
+            this.lbl_Exit.Name = "lbl_Exit";
+            this.lbl_Exit.Size = new System.Drawing.Size(35, 35);
+            this.lbl_Exit.TabIndex = 1;
+            this.lbl_Exit.Text = "X";
+            this.lbl_Exit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_Exit.Click += new System.EventHandler(this.lbl_Exit_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(11, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(250, 26);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "智慧加压站SCADA监控系统";
             // 
             // FrmLogin
             // 
@@ -142,6 +144,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_Login;
         private System.Windows.Forms.ComboBox cmb_User;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tex_Pwd;
     }
 }

@@ -84,6 +84,12 @@
     <Compile Include="1.界面层\FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="1.界面层\FrmHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="1.界面层\FrmHistory.Designer.cs">
+      <DependentUpon>FrmHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="1.界面层\FrmValveControl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,12 +125,14 @@
     <Compile Include="3.通信层\PlcDataService.cs" />
     <Compile Include="5.工具库\CameraHelper.cs" />
     <Compile Include="4.实体库\Enum.cs" />
-    <Compile Include="FrmLogin.cs">
+    <Compile Include="1.界面层\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmLogin.Designer.cs">
+    <Compile Include="1.界面层\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="2.数据层\HistoryData.cs" />
+    <Compile Include="3.通信层\HistoryDataService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="3.通信层\S7NetLib.cs" />
@@ -132,8 +140,13 @@
     <Compile Include="3.通信层\SysInfoService.cs" />
     <Compile Include="5.工具库\SQLiteHelper.cs" />
     <Compile Include="4.实体库\SysAdmin.cs" />
+    <Compile Include="3.通信层\SQLiteService.cs" />
+    <Compile Include="3.通信层\SysAdminService.cs" />
     <EmbeddedResource Include="1.界面层\FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="1.界面层\FrmHistory.resx">
+      <DependentUpon>FrmHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="1.界面层\FrmValveControl.resx">
       <DependentUpon>FrmValveControl.cs</DependentUpon>
@@ -150,7 +163,7 @@
     <EmbeddedResource Include="1.界面层\FrmParmSet.resx">
       <DependentUpon>FrmParmSet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmLogin.resx">
+    <EmbeddedResource Include="1.界面层\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -190,8 +203,6 @@
       <Name>xbd.s7netplus</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="2.数据层\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

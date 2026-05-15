@@ -27,6 +27,9 @@ namespace xbd.PressurizationStationPro
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            new SQLiteService().SetConnectStr($"Data Source={Application.StartupPath}\\DataBase\\PressurizationStationDataBase;Pooling=true;FillIfMissing=false;");
+
             Application.Run(new FrmMain());
 
 

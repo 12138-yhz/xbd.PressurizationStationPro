@@ -54,6 +54,13 @@ namespace xbd.PressurizationStationPro
 
         private CameraHelper cameraHelper;
 
+        private HistoryDataService historyDataService = new HistoryDataService();
+
+        /// <summary>
+        /// 上次保存历史数据的时间，初始值为DateTime.MinValue，表示还没有保存过历史数据
+        /// </summary>
+        private DateTime lastHistoryDataSaveTime = DateTime.MinValue;
+
         public FrmMain()
         {
             InitializeComponent();
@@ -147,8 +154,34 @@ namespace xbd.PressurizationStationPro
                     if (data.IsSuccess)
                     {
                         ///容错次数清零
-                        plcDataService.ErrorTimes = 0; 
+                        plcDataService.ErrorTimes = 0;
+                        //更新界面数据
                         this.UpdateUIData(data.Content);
+
+                        //保存历史数据，每1s保存一次
+                        int elapsedSeconds = DateTime.Now.Second - lastHistoryDataSaveTime.Second;
+                        if (elapsedSeconds == 1 || elapsedSeconds == -59)
+                        {
+                            HistoryData historyData = new HistoryData
+                            {
+                                InsertTime = DateTime.Now,
+                                PressureIn = data.Content.PressureIn.ToString("f2"),
+                                PressureOut = data.Content.PressureOut.ToString("f2"),
+                                TempIn1 = data.Content.TempIn1.ToString("f2"),
+                                TempIn2 = data.Content.TempIn2.ToString("f2"),
+                                TempOut = data.Content.TempOut.ToString("f2"),
+                                PressureTank1 = data.Content.PressureTank1.ToString("f2"),
+                                PressureTank2 = data.Content.PressureTank2.ToString("f2"),
+                                LevelTank1 = data.Content.LevelTank1.ToString("f2"),
+                                LevelTank2 = data.Content.LevelTank2.ToString("f2"),
+                                PressureTankOut = data.Content.PressureTankOut.ToString("f2")
+                            };
+
+                            // 3. 异步保存（建议），防止数据库 I/O 阻塞你的数据采集主循环
+                            Task.Run(() => historyDataService.AddHistoryData(historyData));
+                        }
+                        // 立即更新时间戳，防止在保存数据的耗时过程中重复触发
+                        lastHistoryDataSaveTime = DateTime.Now;
                     }
                     //失败
                     else
@@ -323,9 +356,23 @@ namespace xbd.PressurizationStationPro
         [DllImport("user32")]
         public static extern bool LockWorkStation();
 
+
         #endregion
 
-   
+        private void btn_UserLogin_Click(object sender, EventArgs e)
+        {
+            DialogResult result = new FrmLogin().ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                this.lbl_LoginName.Text = Program.CurrentUser.LoginName;
+
+            }
+            else if (result == DialogResult.Cancel)
+            {
+                this.lbl_LoginName.Text = "访客";
+            }
+        }
     }
 
     #region 消息筛选器 

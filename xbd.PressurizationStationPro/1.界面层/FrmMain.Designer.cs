@@ -134,6 +134,8 @@
             this.btn_Record = new System.Windows.Forms.Button();
             this.btn_SetParm = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lbl_LoginName = new System.Windows.Forms.Label();
             this.main_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -702,6 +704,7 @@
             this.btn_UserLogin.TabIndex = 3;
             this.btn_UserLogin.Text = "用户登录";
             this.btn_UserLogin.UseVisualStyleBackColor = true;
+            this.btn_UserLogin.Click += new System.EventHandler(this.btn_UserLogin_Click);
             // 
             // label30
             // 
@@ -1536,6 +1539,8 @@
             // 
             this.top_Panel.BackgroundImage = global::xbd.PressurizationStationPro.Properties.Resources.TopPanel_png;
             this.top_Panel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.top_Panel.Controls.Add(this.lbl_LoginName);
+            this.top_Panel.Controls.Add(this.label3);
             this.top_Panel.Controls.Add(this.lbl_Time);
             this.top_Panel.Controls.Add(this.btn_Exit);
             this.top_Panel.Controls.Add(this.btn_Table);
@@ -1631,6 +1636,32 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "智慧加压站SCADA监控系统";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(18, 57);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(107, 20);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "当前登录用户：";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_LoginName
+            // 
+            this.lbl_LoginName.AutoSize = true;
+            this.lbl_LoginName.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_LoginName.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_LoginName.ForeColor = System.Drawing.Color.White;
+            this.lbl_LoginName.Location = new System.Drawing.Point(120, 57);
+            this.lbl_LoginName.Name = "lbl_LoginName";
+            this.lbl_LoginName.Size = new System.Drawing.Size(37, 20);
+            this.lbl_LoginName.TabIndex = 5;
+            this.lbl_LoginName.Text = "访客";
+            this.lbl_LoginName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrmMain
             // 
@@ -1774,6 +1805,8 @@
         private System.Windows.Forms.Label lbl_PreTankOut;
         private System.Windows.Forms.Label lbl_TempIn2;
         private AForge.Controls.VideoSourcePlayer vsp_Panel;
+        private System.Windows.Forms.Label lbl_LoginName;
+        private System.Windows.Forms.Label label3;
     }
 }
 

@@ -51,7 +51,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(299, 46);
+            this.panel1.Size = new System.Drawing.Size(297, 46);
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Panel_MouseMove);
@@ -72,7 +72,7 @@
             this.lbl_Exit.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_Exit.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lbl_Exit.ForeColor = System.Drawing.Color.White;
-            this.lbl_Exit.Location = new System.Drawing.Point(250, 5);
+            this.lbl_Exit.Location = new System.Drawing.Point(248, 5);
             this.lbl_Exit.Name = "lbl_Exit";
             this.lbl_Exit.Size = new System.Drawing.Size(46, 37);
             this.lbl_Exit.TabIndex = 2;
@@ -95,7 +95,7 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label1.Location = new System.Drawing.Point(0, 45);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(299, 1);
+            this.label1.Size = new System.Drawing.Size(297, 1);
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             // 
@@ -119,9 +119,9 @@
             this.mainPanel.Controls.Add(this.lbl_Message);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.mainPanel.Location = new System.Drawing.Point(0, 0);
+            this.mainPanel.Location = new System.Drawing.Point(1, 1);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(299, 251);
+            this.mainPanel.Size = new System.Drawing.Size(297, 249);
             this.mainPanel.TabIndex = 1;
             // 
             // btn_Cancel
@@ -162,11 +162,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(299, 251);
             this.Controls.Add(this.mainPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmMsgWithAck";
+            this.Padding = new System.Windows.Forms.Padding(1);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmMsgNoAck";
             this.panel1.ResumeLayout(false);
