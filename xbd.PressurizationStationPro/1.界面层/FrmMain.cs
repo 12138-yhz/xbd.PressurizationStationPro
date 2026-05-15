@@ -373,6 +373,11 @@ namespace xbd.PressurizationStationPro
                 this.lbl_LoginName.Text = "访客";
             }
         }
+
+        private void btn_Record_Click(object sender, EventArgs e)
+        {
+            new FrmHistory().ShowDialog();
+        }
     }
 
     #region 消息筛选器 

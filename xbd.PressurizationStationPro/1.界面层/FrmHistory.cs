@@ -12,18 +12,33 @@ namespace xbd.PressurizationStationPro
 {
     public partial class FrmHistory : Form
     {
-        public FrmHistory(string message,string title)
+
+        private HistoryDataService historyDataService = new HistoryDataService();
+        public FrmHistory()
         {
             InitializeComponent();
             this.TopMost = true;
-            this.lbl_Title.Text = title;
-            //this.lbl_Message.Text = message;
         }
 
  
         private void btn_QueryHistory_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
+            if(dtp_Start.Value > dtp_End.Value)
+            {
+                new FrmMsgNoAck("开始时间不能大于结束时间！", "查询提示").ShowDialog();
+                return;
+            }
+            var res = historyDataService.GetHistoryDataByTime(this.dtp_Start.Value, this.dtp_End.Value);
+
+            if(res.IsSuccess)
+            {
+                dgv_HistoryData.DataSource = res.Content;
+            }
+            else
+            {
+                new FrmMsgNoAck("查询历史数据失败！"+ res.Message, "查询提示").ShowDialog();
+            }
+
         }
 
         private void lbl_Exit_Click(object sender, EventArgs e)
