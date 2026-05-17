@@ -34,7 +34,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_Title = new System.Windows.Forms.Label();
             this.lbl_Exit = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.dtp_End = new System.Windows.Forms.DateTimePicker();
@@ -53,13 +52,14 @@
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_Print = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_QueryHistory = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.mainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_HistoryData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -100,17 +100,6 @@
             this.lbl_Exit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_Exit.Click += new System.EventHandler(this.lbl_Exit_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.pictureBox1.Image = global::xbd.PressurizationStationPro.Properties.Resources.History_png;
-            this.pictureBox1.Location = new System.Drawing.Point(14, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(34, 32);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.White;
@@ -129,7 +118,7 @@
             this.mainPanel.Controls.Add(this.dtp_Start);
             this.mainPanel.Controls.Add(this.label2);
             this.mainPanel.Controls.Add(this.dgv_HistoryData);
-            this.mainPanel.Controls.Add(this.button2);
+            this.mainPanel.Controls.Add(this.btn_Print);
             this.mainPanel.Controls.Add(this.button1);
             this.mainPanel.Controls.Add(this.btn_QueryHistory);
             this.mainPanel.Controls.Add(this.panel1);
@@ -215,9 +204,9 @@
             this.Column9,
             this.Column10});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -239,6 +228,7 @@
             this.dgv_HistoryData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_HistoryData.Size = new System.Drawing.Size(1111, 479);
             this.dgv_HistoryData.TabIndex = 4;
+            this.dgv_HistoryData.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgv_HistoryData_RowPostPaint);
             // 
             // Column1
             // 
@@ -339,22 +329,22 @@
             this.Column10.ReadOnly = true;
             this.Column10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // button2
+            // btn_Print
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.BackgroundImage = global::xbd.PressurizationStationPro.Properties.Resources.Yellow_png;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button2.Location = new System.Drawing.Point(1005, 66);
-            this.button2.Margin = new System.Windows.Forms.Padding(0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(90, 35);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "打印记录";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.btn_QueryHistory_Click);
+            this.btn_Print.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Print.BackgroundImage = global::xbd.PressurizationStationPro.Properties.Resources.Yellow_png;
+            this.btn_Print.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Print.FlatAppearance.BorderSize = 0;
+            this.btn_Print.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Print.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_Print.Location = new System.Drawing.Point(1005, 66);
+            this.btn_Print.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_Print.Name = "btn_Print";
+            this.btn_Print.Size = new System.Drawing.Size(90, 35);
+            this.btn_Print.TabIndex = 3;
+            this.btn_Print.Text = "打印记录";
+            this.btn_Print.UseVisualStyleBackColor = false;
+            this.btn_Print.Click += new System.EventHandler(this.btn_Print_Click);
             // 
             // button1
             // 
@@ -371,7 +361,7 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "导出记录";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.btn_QueryHistory_Click);
+            this.button1.Click += new System.EventHandler(this.btn_Export);
             // 
             // btn_QueryHistory
             // 
@@ -390,6 +380,17 @@
             this.btn_QueryHistory.UseVisualStyleBackColor = false;
             this.btn_QueryHistory.Click += new System.EventHandler(this.btn_QueryHistory_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.pictureBox1.Image = global::xbd.PressurizationStationPro.Properties.Resources.History_png;
+            this.pictureBox1.Location = new System.Drawing.Point(14, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(34, 32);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // FrmHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -404,10 +405,10 @@
             this.Text = "FrmMsgNoAck";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.mainPanel.ResumeLayout(false);
             this.mainPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_HistoryData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -436,7 +437,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dtp_Start;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_Print;
         private System.Windows.Forms.Button button1;
     }
 }

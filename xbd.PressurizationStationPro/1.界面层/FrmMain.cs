@@ -378,6 +378,11 @@ namespace xbd.PressurizationStationPro
         {
             new FrmHistory().ShowDialog();
         }
+
+        private void btn_Report_Click(object sender, EventArgs e)
+        {
+            new FrmReport().ShowDialog();
+        }
     }
 
     #region 消息筛选器 

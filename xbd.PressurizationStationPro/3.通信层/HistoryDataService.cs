@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SQLite;
 using System.Linq;
 using System.Text;
@@ -80,5 +81,46 @@ namespace xbd.PressurizationStationPro
                 return OperateResult.CreateFailResult<List<HistoryData>>(ex.Message);
             }
         }
+
+        /// <summary>
+        /// 需求是根据开始时间和结束时间以及查询条件查询历史数据记录，并返回一个包含查询结果的OperateResult对象，OperateResult对象的Content属性包含一个DataTable对象，DataTable对象包含查询结果的数据。 
+        /// </summary>
+        /// <param name="start"></param>
+        /// <param name="end"></param>
+        /// <param name="condition"></param>
+        /// <param name="dataableName">数据表名称</param>
+        /// <returns></returns>
+        public OperateResult<DataTable> GetReportDataByCondition(string start,string end,List<string> condition,string dataableName)
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Append("Select ");
+            stringBuilder.Append(string.Join(",", condition));
+            stringBuilder.Append(" From HistoryData Where InsertTime between @Start and @End");
+
+            SQLiteParameter[] parameters = new SQLiteParameter[] { 
+            
+                new SQLiteParameter("@Start", start),
+                new SQLiteParameter("@End", end)
+             };
+
+            try
+            {
+                DataSet dataSet = SQLiteHelper.GetDataSet(stringBuilder.ToString(), parameters, dataableName);
+                if(dataSet.Tables.Count > 0)
+                {
+                    return OperateResult.CreateSuccessResult(dataSet.Tables[0]);
+                }
+                else
+                {
+                    return OperateResult.CreateFailResult<DataTable>("未查询到数据");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return OperateResult.CreateFailResult<DataTable>(ex.Message);
+            }
+        }
+
     }
 }
