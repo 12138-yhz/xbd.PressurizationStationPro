@@ -10,7 +10,7 @@ namespace xbd.PressurizationStationPro
     {
         public int LoginId { get; set; }
         public string LoginName { get; set; }
-        public string Password { get; set; }
+        public string LoginPwd { get; set; }
         public RoleName RoleName { get; set; }
     }
 }

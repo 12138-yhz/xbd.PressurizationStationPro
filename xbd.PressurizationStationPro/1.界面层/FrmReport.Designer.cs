@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_Print = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_Export = new System.Windows.Forms.Button();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,20 +45,20 @@
             this.btn_QueryHistory = new System.Windows.Forms.Button();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dtp_End = new System.Windows.Forms.DateTimePicker();
+            this.dtp_ReportTime = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.rdb_Avg = new System.Windows.Forms.RadioButton();
+            this.rdb_Min = new System.Windows.Forms.RadioButton();
+            this.rdb_Max = new System.Windows.Forms.RadioButton();
+            this.cmb_ReportType = new System.Windows.Forms.ComboBox();
             this.dgv_HistoryData = new System.Windows.Forms.DataGridView();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_Title = new System.Windows.Forms.Label();
             this.lbl_Exit = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.rdb_Max = new System.Windows.Forms.RadioButton();
-            this.rdb_Min = new System.Windows.Forms.RadioButton();
-            this.rdb_Avg = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.mainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_HistoryData)).BeginInit();
@@ -91,22 +91,24 @@
             this.btn_Print.TabIndex = 3;
             this.btn_Print.Text = "打印记录";
             this.btn_Print.UseVisualStyleBackColor = false;
+            this.btn_Print.Click += new System.EventHandler(this.btn_Print_Click);
             // 
-            // button1
+            // btn_Export
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = global::xbd.PressurizationStationPro.Properties.Resources.Green_png;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(910, 63);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 35);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "导出记录";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_Export.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Export.BackgroundImage = global::xbd.PressurizationStationPro.Properties.Resources.Green_png;
+            this.btn_Export.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Export.FlatAppearance.BorderSize = 0;
+            this.btn_Export.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Export.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_Export.Location = new System.Drawing.Point(910, 63);
+            this.btn_Export.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_Export.Name = "btn_Export";
+            this.btn_Export.Size = new System.Drawing.Size(90, 35);
+            this.btn_Export.TabIndex = 3;
+            this.btn_Export.Text = "导出记录";
+            this.btn_Export.UseVisualStyleBackColor = false;
+            this.btn_Export.Click += new System.EventHandler(this.btn_Export_Click);
             // 
             // Column10
             // 
@@ -195,6 +197,7 @@
             this.btn_QueryHistory.TabIndex = 3;
             this.btn_QueryHistory.Text = "查询记录";
             this.btn_QueryHistory.UseVisualStyleBackColor = false;
+            this.btn_QueryHistory.Click += new System.EventHandler(this.btn_QueryHistory_Click);
             // 
             // Column2
             // 
@@ -214,15 +217,15 @@
             this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Column1.Width = 180;
             // 
-            // dtp_End
+            // dtp_ReportTime
             // 
-            this.dtp_End.CalendarFont = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dtp_End.CustomFormat = "yyyy-MM-dd HH:mm:ss";
-            this.dtp_End.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_End.Location = new System.Drawing.Point(292, 66);
-            this.dtp_End.Name = "dtp_End";
-            this.dtp_End.Size = new System.Drawing.Size(200, 26);
-            this.dtp_End.TabIndex = 5;
+            this.dtp_ReportTime.CalendarFont = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dtp_ReportTime.CustomFormat = "yyyy-MM-dd HH:mm:ss";
+            this.dtp_ReportTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_ReportTime.Location = new System.Drawing.Point(292, 66);
+            this.dtp_ReportTime.Name = "dtp_ReportTime";
+            this.dtp_ReportTime.Size = new System.Drawing.Size(200, 26);
+            this.dtp_ReportTime.TabIndex = 5;
             // 
             // label3
             // 
@@ -252,13 +255,13 @@
             this.mainPanel.Controls.Add(this.rdb_Avg);
             this.mainPanel.Controls.Add(this.rdb_Min);
             this.mainPanel.Controls.Add(this.rdb_Max);
-            this.mainPanel.Controls.Add(this.comboBox1);
-            this.mainPanel.Controls.Add(this.dtp_End);
+            this.mainPanel.Controls.Add(this.cmb_ReportType);
+            this.mainPanel.Controls.Add(this.dtp_ReportTime);
             this.mainPanel.Controls.Add(this.label3);
             this.mainPanel.Controls.Add(this.label2);
             this.mainPanel.Controls.Add(this.dgv_HistoryData);
             this.mainPanel.Controls.Add(this.btn_Print);
-            this.mainPanel.Controls.Add(this.button1);
+            this.mainPanel.Controls.Add(this.btn_Export);
             this.mainPanel.Controls.Add(this.btn_QueryHistory);
             this.mainPanel.Controls.Add(this.panel1);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -269,6 +272,50 @@
             this.mainPanel.Size = new System.Drawing.Size(1138, 575);
             this.mainPanel.TabIndex = 2;
             // 
+            // rdb_Avg
+            // 
+            this.rdb_Avg.AutoSize = true;
+            this.rdb_Avg.ForeColor = System.Drawing.Color.White;
+            this.rdb_Avg.Location = new System.Drawing.Point(691, 68);
+            this.rdb_Avg.Name = "rdb_Avg";
+            this.rdb_Avg.Size = new System.Drawing.Size(69, 24);
+            this.rdb_Avg.TabIndex = 7;
+            this.rdb_Avg.Text = "平均值";
+            this.rdb_Avg.UseVisualStyleBackColor = true;
+            // 
+            // rdb_Min
+            // 
+            this.rdb_Min.AutoSize = true;
+            this.rdb_Min.ForeColor = System.Drawing.Color.White;
+            this.rdb_Min.Location = new System.Drawing.Point(600, 68);
+            this.rdb_Min.Name = "rdb_Min";
+            this.rdb_Min.Size = new System.Drawing.Size(69, 24);
+            this.rdb_Min.TabIndex = 7;
+            this.rdb_Min.Text = "最小值";
+            this.rdb_Min.UseVisualStyleBackColor = true;
+            // 
+            // rdb_Max
+            // 
+            this.rdb_Max.AutoSize = true;
+            this.rdb_Max.Checked = true;
+            this.rdb_Max.ForeColor = System.Drawing.Color.White;
+            this.rdb_Max.Location = new System.Drawing.Point(509, 68);
+            this.rdb_Max.Name = "rdb_Max";
+            this.rdb_Max.Size = new System.Drawing.Size(69, 24);
+            this.rdb_Max.TabIndex = 7;
+            this.rdb_Max.TabStop = true;
+            this.rdb_Max.Text = "最大值";
+            this.rdb_Max.UseVisualStyleBackColor = true;
+            // 
+            // cmb_ReportType
+            // 
+            this.cmb_ReportType.FormattingEnabled = true;
+            this.cmb_ReportType.Location = new System.Drawing.Point(96, 63);
+            this.cmb_ReportType.Name = "cmb_ReportType";
+            this.cmb_ReportType.Size = new System.Drawing.Size(86, 28);
+            this.cmb_ReportType.TabIndex = 6;
+            this.cmb_ReportType.SelectedIndexChanged += new System.EventHandler(this.cmb_ReportType_SelectedIndexChanged);
+            // 
             // dgv_HistoryData
             // 
             this.dgv_HistoryData.AllowUserToAddRows = false;
@@ -278,14 +325,14 @@
             this.dgv_HistoryData.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
             this.dgv_HistoryData.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgv_HistoryData.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_HistoryData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_HistoryData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_HistoryData.ColumnHeadersHeight = 45;
             this.dgv_HistoryData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_HistoryData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -300,31 +347,32 @@
             this.Column8,
             this.Column9,
             this.Column10});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_HistoryData.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_HistoryData.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_HistoryData.EnableHeadersVisualStyles = false;
             this.dgv_HistoryData.Location = new System.Drawing.Point(15, 123);
             this.dgv_HistoryData.Name = "dgv_HistoryData";
             this.dgv_HistoryData.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_HistoryData.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(9)))), ((int)(((byte)(45)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_HistoryData.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_HistoryData.RowHeadersWidth = 55;
             this.dgv_HistoryData.RowTemplate.Height = 35;
             this.dgv_HistoryData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_HistoryData.Size = new System.Drawing.Size(1111, 479);
+            this.dgv_HistoryData.Size = new System.Drawing.Size(1111, 436);
             this.dgv_HistoryData.TabIndex = 4;
+            this.dgv_HistoryData.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgv_HistoryData_RowPostPaint);
             // 
             // Column11
             // 
@@ -383,49 +431,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(96, 63);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(86, 28);
-            this.comboBox1.TabIndex = 6;
-            // 
-            // rdb_Max
-            // 
-            this.rdb_Max.AutoSize = true;
-            this.rdb_Max.Checked = true;
-            this.rdb_Max.ForeColor = System.Drawing.Color.White;
-            this.rdb_Max.Location = new System.Drawing.Point(509, 68);
-            this.rdb_Max.Name = "rdb_Max";
-            this.rdb_Max.Size = new System.Drawing.Size(69, 24);
-            this.rdb_Max.TabIndex = 7;
-            this.rdb_Max.TabStop = true;
-            this.rdb_Max.Text = "最大值";
-            this.rdb_Max.UseVisualStyleBackColor = true;
-            // 
-            // rdb_Min
-            // 
-            this.rdb_Min.AutoSize = true;
-            this.rdb_Min.ForeColor = System.Drawing.Color.White;
-            this.rdb_Min.Location = new System.Drawing.Point(600, 68);
-            this.rdb_Min.Name = "rdb_Min";
-            this.rdb_Min.Size = new System.Drawing.Size(69, 24);
-            this.rdb_Min.TabIndex = 7;
-            this.rdb_Min.Text = "最小值";
-            this.rdb_Min.UseVisualStyleBackColor = true;
-            // 
-            // rdb_Avg
-            // 
-            this.rdb_Avg.AutoSize = true;
-            this.rdb_Avg.ForeColor = System.Drawing.Color.White;
-            this.rdb_Avg.Location = new System.Drawing.Point(691, 68);
-            this.rdb_Avg.Name = "rdb_Avg";
-            this.rdb_Avg.Size = new System.Drawing.Size(69, 24);
-            this.rdb_Avg.TabIndex = 7;
-            this.rdb_Avg.Text = "平均值";
-            this.rdb_Avg.UseVisualStyleBackColor = true;
-            // 
             // FrmReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -453,7 +458,7 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btn_Print;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_Export;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
@@ -465,14 +470,14 @@
         private System.Windows.Forms.Button btn_QueryHistory;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DateTimePicker dtp_End;
+        private System.Windows.Forms.DateTimePicker dtp_ReportTime;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.RadioButton rdb_Avg;
         private System.Windows.Forms.RadioButton rdb_Min;
         private System.Windows.Forms.RadioButton rdb_Max;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmb_ReportType;
         private System.Windows.Forms.DataGridView dgv_HistoryData;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.Panel panel1;

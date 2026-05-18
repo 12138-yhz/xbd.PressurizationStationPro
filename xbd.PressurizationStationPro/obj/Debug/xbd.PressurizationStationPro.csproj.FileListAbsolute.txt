@@ -18,7 +18,6 @@ E:\YHZ\FormProject\xbd.PressurizationStationPro\xbd.PressurizationStationPro\bin
 E:\YHZ\FormProject\xbd.PressurizationStationPro\xbd.PressurizationStationPro\bin\Debug\xbd.s7netplus.pdb
 E:\YHZ\FormProject\xbd.PressurizationStationPro\xbd.PressurizationStationPro\obj\Debug\xbd.PressurizationStationPro.FrmMsgNoAck.resources
 E:\YHZ\FormProject\xbd.PressurizationStationPro\xbd.PressurizationStationPro\obj\Debug\xbd.PressurizationStationPro.FrmParmSet.resources
-E:\YHZ\FormProject\xbd.PressurizationStationPro\xbd.PressurizationStationPro\obj\Debug\xbd.PressurizationStationPro.exe.config
 E:\YHZ\FormProject\xbd.PressurizationStationPro\xbd.PressurizationStationPro\obj\Debug\xbd.PressurizationStationPro.FrmMsgWithAck.resources
 D:\FormProject\xbd.PressurizationStationPro\xbd.PressurizationStationPro\bin\Debug\xbd.PressurizationStationPro.exe.config
 D:\FormProject\xbd.PressurizationStationPro\xbd.PressurizationStationPro\bin\Debug\xbd.PressurizationStationPro.exe
@@ -44,3 +43,8 @@ D:\FormProject\xbd.PressurizationStationPro\xbd.PressurizationStationPro\obj\Deb
 E:\YHZ\FormProject\xbd.PressurizationStationPro\xbd.PressurizationStationPro\obj\Debug\xbd.PressurizationStationPro.FrmValveControl.resources
 D:\FormProject\xbd.PressurizationStationPro\xbd.PressurizationStationPro\obj\Debug\xbd.PressurizationStationPro.FrmValveControl.resources
 D:\FormProject\xbd.PressurizationStationPro\xbd.PressurizationStationPro\obj\Debug\xbd.PressurizationStationPro.exe.config
+E:\YHZ\FormProject\xbd.PressurizationStationPro\xbd.PressurizationStationPro\obj\Debug\xbd.PressurizationStationPro.FrmHistory.resources
+E:\YHZ\FormProject\xbd.PressurizationStationPro\xbd.PressurizationStationPro\obj\Debug\xbd.PressurizationStationPro.FrmLogin.resources
+E:\YHZ\FormProject\xbd.PressurizationStationPro\xbd.PressurizationStationPro\obj\Debug\xbd.PressurizationStationPro.FrmPrint.resources
+E:\YHZ\FormProject\xbd.PressurizationStationPro\xbd.PressurizationStationPro\obj\Debug\xbd.PressurizationStationPro.FrmReport.resources
+E:\YHZ\FormProject\xbd.PressurizationStationPro\xbd.PressurizationStationPro\obj\Debug\xbd.PressurizationStationPro.FrmUserManager.resources

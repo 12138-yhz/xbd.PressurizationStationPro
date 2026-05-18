@@ -21,13 +21,14 @@ namespace xbd.PressurizationStationPro
 
             List<SysAdmin> sysAdmins = new List<SysAdmin>();
 
-            while (dataReader.Read()) { 
+            while (dataReader.Read())
+            {
 
                 sysAdmins.Add(new SysAdmin
                 {
                     LoginId = Convert.ToInt32(dataReader["LoginId"]),
                     LoginName = dataReader["LoginName"].ToString(),
-                    Password = dataReader["LoginPwd"].ToString(),
+                    LoginPwd = dataReader["LoginPwd"].ToString(),
                     RoleName = (RoleName)Enum.Parse(typeof(RoleName), dataReader["RoleName"].ToString())
 
                 });
@@ -48,7 +49,7 @@ namespace xbd.PressurizationStationPro
             SQLiteParameter[] parametes = new SQLiteParameter[]
             {
                 new SQLiteParameter("@LoginName", sysAdmin.LoginName),
-                new SQLiteParameter("@LoginPwd", sysAdmin.Password)
+                new SQLiteParameter("@LoginPwd", sysAdmin.LoginPwd)
             };
 
             SQLiteDataReader dataReader = SQLiteHelper.ExecuteReader(sql, parametes);
@@ -64,6 +65,52 @@ namespace xbd.PressurizationStationPro
             dataReader.Close();
 
             return sysAdmin;
+        }
+
+
+        /// <summary>
+        /// 增加用户对象
+        /// </summary>
+        /// <param name="sysAdmin"></param>
+        /// <returns></returns>
+        public bool AddSysAdmin(SysAdmin sysAdmin)
+        {
+            string sql = "INSERT INTO SysAdmin (LoginName, LoginPwd, RoleName) VALUES (@LoginName, @LoginPwd, @RoleName)";
+            SQLiteParameter[] parameters = new SQLiteParameter[]
+            {
+                new SQLiteParameter("@LoginName", sysAdmin.LoginName),
+                new SQLiteParameter("@LoginPwd", sysAdmin.LoginPwd),
+                new SQLiteParameter("@RoleName", sysAdmin.RoleName.ToString())
+            };
+            return SQLiteHelper.ExecuteNonQuery(sql, parameters) == 1;
+        }
+
+        /// <summary>
+        /// 修改用户对象
+        /// </summary>
+        /// <param name="sysAdmin"></param>
+        /// <returns></returns>
+        public bool ModifySysAdmin(SysAdmin sysAdmin)
+        {
+            string sql = "UPDATE SysAdmin SET LoginName = @LoginName, LoginPwd = @LoginPwd, RoleName = @RoleName WHERE LoginId = @LoginId";
+            SQLiteParameter[] parameters = new SQLiteParameter[]
+            {
+                new SQLiteParameter("@LoginName", sysAdmin.LoginName),
+                new SQLiteParameter("@LoginPwd", sysAdmin.LoginPwd),
+                new SQLiteParameter("@RoleName", sysAdmin.RoleName.ToString()),
+                new SQLiteParameter("@LoginId", sysAdmin.LoginId)
+            };
+            return SQLiteHelper.ExecuteNonQuery(sql, parameters) == 1;
+        }
+
+        public bool DeleteSysAdmin(int loginId)
+        {
+            string sql = "DELETE FROM SysAdmin WHERE LoginId = @LoginId";
+            SQLiteParameter[] parameters = new SQLiteParameter[]
+            {
+                new SQLiteParameter("@LoginId", loginId)
+            };      
+            return SQLiteHelper.ExecuteNonQuery(sql, parameters) == 1;
         }
     }
 }

@@ -58,7 +58,7 @@ namespace xbd.PressurizationStationPro
 
             SysAdmin admin = new SysAdmin();
             admin.LoginName = this.cmb_User.Text.Trim();
-            admin.Password = this.tex_Pwd.Text.Trim();
+            admin.LoginPwd =StringSecurityHelper.DESEncrypt(this.tex_Pwd.Text.Trim());
 
             admin = sysAdminService.AdminLogin(admin);
 

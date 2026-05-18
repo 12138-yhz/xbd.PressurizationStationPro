@@ -18,8 +18,6 @@ namespace xbd.PressurizationStationPro
 {
     public partial class FrmMain : Form
     {
-        private S7NetLib siemens;
-
         private SysInfoService infoService = new SysInfoService();
 
         /// <summary>
@@ -114,8 +112,21 @@ namespace xbd.PressurizationStationPro
 
         private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            clts.Cancel();
-            cameraHelper?.StopCamera();
+            if(new FrmMsgWithAck("是否确认要退出系统？","退出系统").ShowDialog() == DialogResult.OK)
+            {
+                //正常关闭
+                updateTimer.Stop();
+                clts.Cancel();
+                cameraHelper?.StopCamera();
+            }
+            else
+            {
+                //取消关闭
+                e.Cancel = true;
+                return;
+            }
+
+     
         }
 
         private void FrmMain_Load(object sender, EventArgs e)
@@ -361,17 +372,38 @@ namespace xbd.PressurizationStationPro
 
         private void btn_UserLogin_Click(object sender, EventArgs e)
         {
-            DialogResult result = new FrmLogin().ShowDialog();
-
-            if (result == DialogResult.OK)
+            if(this.btn_UserLogin.Text == "用户登录")
             {
-                this.lbl_LoginName.Text = Program.CurrentUser.LoginName;
+                DialogResult result = new FrmLogin().ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    this.lbl_LoginName.Text = Program.CurrentUser.LoginName;
+
+                    //记录登录时间
+                    LoginTime = DateTime.Now;
+                    this.btn_UserLogin.Text = "用户管理";
+                }
+                else if (result == DialogResult.Cancel)
+                {
+                    this.lbl_LoginName.Text = "访客";
+                }
 
             }
-            else if (result == DialogResult.Cancel)
+            else
             {
-                this.lbl_LoginName.Text = "访客";
+                //ToDo :用户权限
+
+                if(Program.CurrentUser!=null&&Program.CurrentUser.RoleName != RoleName.管理员)
+                {
+                    new FrmMsgNoAck("当前用户没有权限进行用户管理！", "权限不足");
+                    return;
+                }
+
+                new FrmUserManager().ShowDialog();
             }
+
+           
         }
 
         private void btn_Record_Click(object sender, EventArgs e)
@@ -382,6 +414,16 @@ namespace xbd.PressurizationStationPro
         private void btn_Report_Click(object sender, EventArgs e)
         {
             new FrmReport().ShowDialog();
+        }
+
+        private void lbl_LoginName_Click(object sender, EventArgs e)
+        {
+           if(new FrmMsgWithAck("是否确认要注销登录？","注销登录").ShowDialog() == DialogResult.OK)
+           {
+               Program.CurrentUser = null;
+               this.lbl_LoginName.Text = "访客";
+               this.btn_UserLogin.Text = "用户登录";
+           }
         }
     }
 

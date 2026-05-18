@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmParmSet));
             this.mainPanel = new System.Windows.Forms.Panel();
-            this.toggle_AutoStart = new xbd.ControlLib.xbdToggle();
             this.label8 = new System.Windows.Forms.Label();
             this.cmb_Camera = new System.Windows.Forms.ComboBox();
             this.cmb_CPUType = new System.Windows.Forms.ComboBox();
@@ -58,6 +58,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.toggle_AutoStart = new xbd.ControlLib.xbdToggle();
             this.mainPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -97,21 +98,6 @@
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(612, 392);
             this.mainPanel.TabIndex = 0;
-            // 
-            // toggle_AutoStart
-            // 
-            this.toggle_AutoStart.Checked = false;
-            this.toggle_AutoStart.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.toggle_AutoStart.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.toggle_AutoStart.Location = new System.Drawing.Point(452, 104);
-            this.toggle_AutoStart.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.toggle_AutoStart.Name = "toggle_AutoStart";
-            this.toggle_AutoStart.Size = new System.Drawing.Size(70, 26);
-            this.toggle_AutoStart.SwitchType = xbd.ControlLib.SwitchType.Quadrilateral;
-            this.toggle_AutoStart.TabIndex = 7;
-            this.toggle_AutoStart.Texts = null;
-            this.toggle_AutoStart.TrueColor = System.Drawing.Color.LimeGreen;
-       
             // 
             // label8
             // 
@@ -416,6 +402,20 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "▶通信参数";
             // 
+            // toggle_AutoStart
+            // 
+            this.toggle_AutoStart.Checked = false;
+            this.toggle_AutoStart.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.toggle_AutoStart.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.toggle_AutoStart.Location = new System.Drawing.Point(452, 104);
+            this.toggle_AutoStart.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.toggle_AutoStart.Name = "toggle_AutoStart";
+            this.toggle_AutoStart.Size = new System.Drawing.Size(70, 26);
+            this.toggle_AutoStart.SwitchType = xbd.ControlLib.SwitchType.Quadrilateral;
+            this.toggle_AutoStart.TabIndex = 7;
+            this.toggle_AutoStart.Texts = null;
+            this.toggle_AutoStart.TrueColor = System.Drawing.Color.LimeGreen;
+            // 
             // FrmParmSet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -424,11 +424,12 @@
             this.Controls.Add(this.mainPanel);
             this.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmParmSet";
             this.Padding = new System.Windows.Forms.Padding(1);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmParmSet";
+            this.Text = "参数设置";
             this.mainPanel.ResumeLayout(false);
             this.mainPanel.PerformLayout();
             this.panel1.ResumeLayout(false);
