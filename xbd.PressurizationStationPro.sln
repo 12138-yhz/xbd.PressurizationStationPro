@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xbd.DataConvertLib", "xbd.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xbd.s7netplus", "xbd.s7netplus\xbd.s7netplus.csproj", "{87DCA77D-A82C-4CCD-8792-5E6CFB0CC765}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xbd.ModbusLib", "xbd.ModbusLib\xbd.ModbusLib.csproj", "{5E6E83A5-3821-4415-878F-84021492B53E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{87DCA77D-A82C-4CCD-8792-5E6CFB0CC765}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87DCA77D-A82C-4CCD-8792-5E6CFB0CC765}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87DCA77D-A82C-4CCD-8792-5E6CFB0CC765}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E6E83A5-3821-4415-878F-84021492B53E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E6E83A5-3821-4415-878F-84021492B53E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E6E83A5-3821-4415-878F-84021492B53E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E6E83A5-3821-4415-878F-84021492B53E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

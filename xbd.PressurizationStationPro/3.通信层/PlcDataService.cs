@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using xbd.DataConvertLib;
+using xbd.ModbusLib.Library;
 
 namespace xbd.PressurizationStationPro
 {
@@ -30,20 +31,36 @@ namespace xbd.PressurizationStationPro
 
         private S7NetLib s7Net;
 
+        private ModbusTCP modbus;
+
         public OperateResult Connect(SysInfo sysInfo)
         {
-            s7Net = new S7NetLib(sysInfo.CpuType,sysInfo.IPAddress, sysInfo.Rack, sysInfo.Slot);
+            //s7Net = new S7NetLib(sysInfo.CpuType,sysInfo.IPAddress, sysInfo.Rack, sysInfo.Slot);
 
-            return s7Net.Connect();
+            //return s7Net.Connect();
+
+            modbus = new ModbusTCP();
+
+            return modbus.Connect(sysInfo.IPAddress, 502);
         }
 
         public OperateResult Disconnect()
         {
-            if(s7Net != null)
+            //if(s7Net != null)
+            //{
+            //    return OperateResult.CreateFailResult("未连接PLC");
+            //}
+            //return s7Net.Disconnect();
+
+            if(modbus != null)
+            {
+                modbus.DisConnect();
+                return OperateResult.CreateSuccessResult();
+            }
+            else
             {
                 return OperateResult.CreateFailResult("未连接PLC");
             }
-            return s7Net.Disconnect();
         }
 
         /// <summary>
@@ -52,11 +69,50 @@ namespace xbd.PressurizationStationPro
         /// <returns></returns>
         public OperateResult<PlcData> ReadPlcData()
         {
-           int byteCount = 44;
+            //int byteCount = 44;
 
-            var result = s7Net.ReadByteArray(xbd.s7netplus.DataType.DataBlock, 1, 0, byteCount);
+            //var result = s7Net.ReadByteArray(xbd.s7netplus.DataType.DataBlock, 1, 0, byteCount);
 
-            if(result.IsSuccess && result.Content != null && result.Content.Length == byteCount)
+            //if(result.IsSuccess && result.Content != null && result.Content.Length == byteCount)
+            //{
+            //    //数据解析
+            //    PlcData plcData = new PlcData();
+
+            //    //bool解析
+            //    plcData.InPump1State = BitLib.GetBitFromByteArray(result.Content, 0, 0);
+            //    plcData.InPump2State = BitLib.GetBitFromByteArray(result.Content, 0, 1);
+            //    plcData.CirclePump1State = BitLib.GetBitFromByteArray(result.Content, 0, 2);
+            //    plcData.CirclePump2State = BitLib.GetBitFromByteArray(result.Content, 0, 3);
+            //    plcData.ValveInState = BitLib.GetBitFromByteArray(result.Content, 0, 4);
+            //    plcData.ValveOutState = BitLib.GetBitFromByteArray(result.Content, 0, 5);
+            //    plcData.SysRunState = BitLib.GetBitFromByteArray(result.Content, 0, 6);
+            //    plcData.SysAlarmState = BitLib.GetBitFromByteArray(result.Content, 0, 7);
+
+            //    //浮点数解析
+            //    plcData.PressureIn = FloatLib.GetFloatFromByteArray(result.Content, 4);
+            //    plcData.PressureOut = FloatLib.GetFloatFromByteArray(result.Content, 8);
+            //    plcData.TempIn1 = FloatLib.GetFloatFromByteArray(result.Content, 12);
+            //    plcData.TempIn2  = FloatLib.GetFloatFromByteArray(result.Content, 16);
+            //    plcData.TempOut = FloatLib.GetFloatFromByteArray(result.Content, 20);
+            //    plcData.PressureTank1 = FloatLib.GetFloatFromByteArray(result.Content, 24);
+            //    plcData.PressureTank2 = FloatLib.GetFloatFromByteArray(result.Content, 28);
+            //    plcData.LevelTank1 = FloatLib.GetFloatFromByteArray(result.Content, 32);
+            //    plcData.LevelTank2 = FloatLib.GetFloatFromByteArray(result.Content, 36);
+            //    plcData.PressureTankOut = FloatLib.GetFloatFromByteArray(result.Content, 40);
+
+            //    return OperateResult.CreateSuccessResult(plcData);
+            //}
+            //else
+            //{
+            //    return OperateResult.CreateFailResult<PlcData>(result.Message);
+            //}
+
+
+            ushort registerCount = 22;
+
+            var result = this.modbus.ReadHoldingRegisters(0, registerCount,1);
+
+            if (result.IsSuccess && result.Content != null && result.Content.Length == registerCount*2)
             {
                 //数据解析
                 PlcData plcData = new PlcData();
@@ -75,7 +131,7 @@ namespace xbd.PressurizationStationPro
                 plcData.PressureIn = FloatLib.GetFloatFromByteArray(result.Content, 4);
                 plcData.PressureOut = FloatLib.GetFloatFromByteArray(result.Content, 8);
                 plcData.TempIn1 = FloatLib.GetFloatFromByteArray(result.Content, 12);
-                plcData.TempIn2  = FloatLib.GetFloatFromByteArray(result.Content, 16);
+                plcData.TempIn2 = FloatLib.GetFloatFromByteArray(result.Content, 16);
                 plcData.TempOut = FloatLib.GetFloatFromByteArray(result.Content, 20);
                 plcData.PressureTank1 = FloatLib.GetFloatFromByteArray(result.Content, 24);
                 plcData.PressureTank2 = FloatLib.GetFloatFromByteArray(result.Content, 28);
@@ -95,12 +151,20 @@ namespace xbd.PressurizationStationPro
 
         public bool InPump1Control(bool value)
         {
-            string startAddress = "DB1.DBX100.0";
-            string stopAddress = "DB1.DBX100.1";
+            //string startAddress = "DB1.DBX100.0";
+            //string stopAddress = "DB1.DBX100.1";
+            //string controlAddress = value ? startAddress : stopAddress;
+            //bool result = s7Net.WriteVariable(controlAddress, true).IsSuccess;
+            //Thread.Sleep(50);
+            //result &= s7Net.WriteVariable(controlAddress, false).IsSuccess;
+            //return result;
+
+            string startAddress = "50.0";
+            string stopAddress = "50.1";
             string controlAddress = value ? startAddress : stopAddress;
-            bool result = s7Net.WriteVariable(controlAddress, true).IsSuccess;
+            bool result = this.modbus.WriteRegisterBit(controlAddress,true,false,1).IsSuccess;
             Thread.Sleep(50);
-            result &= s7Net.WriteVariable(controlAddress, false).IsSuccess;
+            result &= this.modbus.WriteRegisterBit(controlAddress,false,false,1).IsSuccess;
             return result;
         }
 
@@ -111,12 +175,20 @@ namespace xbd.PressurizationStationPro
         /// <returns></returns>
         public bool InPump2Control(bool value)
         {
-            string startAddress = "DB1.DBX100.2";
-            string stopAddress = "DB1.DBX100.3";
+            //string startAddress = "DB1.DBX100.2";
+            //string stopAddress = "DB1.DBX100.3";
+            //string controlAddress = value ? startAddress : stopAddress;
+            //bool result = s7Net.WriteVariable(controlAddress, true).IsSuccess;
+            //Thread.Sleep(50);
+            //result &= s7Net.WriteVariable(controlAddress, false).IsSuccess;
+            //return result;
+
+            string startAddress = "50.2";
+            string stopAddress = "50.3";
             string controlAddress = value ? startAddress : stopAddress;
-            bool result = s7Net.WriteVariable(controlAddress, true).IsSuccess;
+            bool result = this.modbus.WriteRegisterBit(controlAddress, true, false, 1).IsSuccess;
             Thread.Sleep(50);
-            result &= s7Net.WriteVariable(controlAddress, false).IsSuccess;
+            result &= this.modbus.WriteRegisterBit(controlAddress, false, false, 1).IsSuccess;
             return result;
         }
 
@@ -127,12 +199,20 @@ namespace xbd.PressurizationStationPro
         /// <returns></returns>
         public bool CirclePump1Control(bool value)
         {
-            string startAddress = "DB1.DBX100.4"; // 注意：此处地址与InPump2Control相同，请核实是否为笔误
-            string stopAddress = "DB1.DBX100.5";
+            //string startAddress = "DB1.DBX100.4"; // 注意：此处地址与InPump2Control相同，请核实是否为笔误
+            //string stopAddress = "DB1.DBX100.5";
+            //string controlAddress = value ? startAddress : stopAddress;
+            //bool result = s7Net.WriteVariable(controlAddress, true).IsSuccess;
+            //Thread.Sleep(50);
+            //result &= s7Net.WriteVariable(controlAddress, false).IsSuccess;
+            //return result;
+
+            string startAddress = "50.4";
+            string stopAddress = "50.5";
             string controlAddress = value ? startAddress : stopAddress;
-            bool result = s7Net.WriteVariable(controlAddress, true).IsSuccess;
+            bool result = this.modbus.WriteRegisterBit(controlAddress, true, false, 1).IsSuccess;
             Thread.Sleep(50);
-            result &= s7Net.WriteVariable(controlAddress, false).IsSuccess;
+            result &= this.modbus.WriteRegisterBit(controlAddress, false, false, 1).IsSuccess;
             return result;
         }
 
@@ -143,12 +223,20 @@ namespace xbd.PressurizationStationPro
         /// <returns></returns>
         public bool CirclePump2Control(bool value)
         {
-            string startAddress = "DB1.DBX100.6"; // 注意：此处地址与InPump2Control相同，请核实是否为笔误
-            string stopAddress = "DB1.DBX100.7";
+            //string startAddress = "DB1.DBX100.6"; // 注意：此处地址与InPump2Control相同，请核实是否为笔误
+            //string stopAddress = "DB1.DBX100.7";
+            //string controlAddress = value ? startAddress : stopAddress;
+            //bool result = s7Net.WriteVariable(controlAddress, true).IsSuccess;
+            //Thread.Sleep(50);
+            //result &= s7Net.WriteVariable(controlAddress, false).IsSuccess;
+            //return result;
+
+            string startAddress = "50.6";
+            string stopAddress = "50.7";
             string controlAddress = value ? startAddress : stopAddress;
-            bool result = s7Net.WriteVariable(controlAddress, true).IsSuccess;
+            bool result = this.modbus.WriteRegisterBit(controlAddress, true, false, 1).IsSuccess;
             Thread.Sleep(50);
-            result &= s7Net.WriteVariable(controlAddress, false).IsSuccess;
+            result &= this.modbus.WriteRegisterBit(controlAddress, false, false, 1).IsSuccess;
             return result;
         }
 
@@ -160,33 +248,55 @@ namespace xbd.PressurizationStationPro
         /// <returns></returns>
         public bool SysReset()
         {
-            string controlAddress = "DB1.DBX101.4";
-     
-            bool result = s7Net.WriteVariable(controlAddress, true).IsSuccess;
+            //string controlAddress = "DB1.DBX101.4";
+
+            //bool result = s7Net.WriteVariable(controlAddress, true).IsSuccess;
+            //Thread.Sleep(50);
+            //result &= s7Net.WriteVariable(controlAddress, false).IsSuccess;
+            //return result;
+
+            string controlAddress = "50.12";
+            bool result = this.modbus.WriteRegisterBit(controlAddress, true, false, 1).IsSuccess;
             Thread.Sleep(50);
-            result &= s7Net.WriteVariable(controlAddress, false).IsSuccess;
+            result &= this.modbus.WriteRegisterBit(controlAddress, false, false, 1).IsSuccess;
             return result;
         }
 
         public bool ValveInControl(bool value)
         {
-            string startAddress = "DB1.DBX101.0"; 
-            string stopAddress = "DB1.DBX101.1";
+            //string startAddress = "DB1.DBX101.0"; 
+            //string stopAddress = "DB1.DBX101.1";
+            //string controlAddress = value ? startAddress : stopAddress;
+            //bool result = s7Net.WriteVariable(controlAddress, true).IsSuccess;
+            //Thread.Sleep(50);
+            //result &= s7Net.WriteVariable(controlAddress, false).IsSuccess;
+            //return result;
+
+            string startAddress = "50.8";
+            string stopAddress = "50.9";
             string controlAddress = value ? startAddress : stopAddress;
-            bool result = s7Net.WriteVariable(controlAddress, true).IsSuccess;
+            bool result = this.modbus.WriteRegisterBit(controlAddress, true, false, 1).IsSuccess;
             Thread.Sleep(50);
-            result &= s7Net.WriteVariable(controlAddress, false).IsSuccess;
+            result &= this.modbus.WriteRegisterBit(controlAddress, false, false, 1).IsSuccess;
             return result;
         }
 
         public bool ValveOutControl(bool value)
         {
-            string startAddress = "DB1.DBX101.2"; 
-            string stopAddress = "DB1.DBX101.3";
+            //string startAddress = "DB1.DBX101.2"; 
+            //string stopAddress = "DB1.DBX101.3";
+            //string controlAddress = value ? startAddress : stopAddress;
+            //bool result = s7Net.WriteVariable(controlAddress, true).IsSuccess;
+            //Thread.Sleep(50);
+            //result &= s7Net.WriteVariable(controlAddress, false).IsSuccess;
+            //return result;
+
+            string startAddress = "50.10";
+            string stopAddress = "50.11";
             string controlAddress = value ? startAddress : stopAddress;
-            bool result = s7Net.WriteVariable(controlAddress, true).IsSuccess;
+            bool result = this.modbus.WriteRegisterBit(controlAddress, true, false, 1).IsSuccess;
             Thread.Sleep(50);
-            result &= s7Net.WriteVariable(controlAddress, false).IsSuccess;
+            result &= this.modbus.WriteRegisterBit(controlAddress, false, false, 1).IsSuccess;
             return result;
         }
     }

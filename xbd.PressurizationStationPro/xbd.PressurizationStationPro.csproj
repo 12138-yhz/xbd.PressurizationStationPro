@@ -234,6 +234,10 @@
       <Project>{867237AD-51F4-4CA5-AD32-D68844CC9101}</Project>
       <Name>xbd.DataConvertLib</Name>
     </ProjectReference>
+    <ProjectReference Include="..\xbd.ModbusLib\xbd.ModbusLib.csproj">
+      <Project>{5E6E83A5-3821-4415-878F-84021492B53E}</Project>
+      <Name>xbd.ModbusLib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\xbd.s7netplus\xbd.s7netplus.csproj">
       <Project>{87DCA77D-A82C-4CCD-8792-5E6CFB0CC765}</Project>
       <Name>xbd.s7netplus</Name>
